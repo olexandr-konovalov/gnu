@@ -1,7 +1,7 @@
 LoadPackage("grpconst");
 LoadPackage("sglppow");
 LoadPackage("cubefree");
-Read("gnudata.g");
+Read("gnu/gnudata.g");
 
 IsSquareFree:= n -> ForAll( Collected( Factors(n) ), x -> x[2] = 1 );
 

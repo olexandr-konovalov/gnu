@@ -1,6 +1,6 @@
 LoadPackage("scscp");
 
-Read("gnu.g");
+Read("gnu/gnu.g");
 
 InstallSCSCPprocedure( "GnuWithExplanation", GnuWithExplanation, "Number of groups of order n", 1, 1 );
 InstallSCSCPprocedure( "Gnu", Gnu, "Number of groups of order n", 1, 1 );
