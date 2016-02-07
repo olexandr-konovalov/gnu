@@ -15,21 +15,19 @@ fi;
 
 if IsBound(GNUDATA[n]) then
   return GNUDATA[n];
-fi;
-  
-if IsCubeFree( n ) then
-  res := NumberCFGroups( n );
-  return [ res, Concatenation( "using NumberCFGroups from CubeFree ",
-                               InstalledPackageVersion("cubefree")) ];
 else
   res := CALL_WITH_CATCH( NrSmallGroups, [ n ] );
   if res[1] then
-    if n = 3^8 or IsPrimePowerInt(n) and Length(Factors(n))=7 then
+    if n = 3^8 or IsPrimePowerInt(n) and Length(Factors(n))=7 and Factors(n)[1]>11 then
       return [ res[2], Concatenation( "using NrSmallGroups from SglPPow ",
                                       InstalledPackageVersion("sglppow")) ];
     else
       return [ res[2], "using NrSmallGroups and the GAP Small Groups Library" ];
     fi;
+  elif IsCubeFree( n ) then
+    res := NumberCFGroups( n );
+    return [ res, Concatenation( "using NumberCFGroups from CubeFree ",
+                               InstalledPackageVersion("cubefree")) ];
   else
     return [ false, Concatenation( List( res[2], String ) ) ];
   fi;
