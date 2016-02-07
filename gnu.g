@@ -20,7 +20,11 @@ if IsCubeFree( n ) then
 else
   res := CALL_WITH_CATCH( NrSmallGroups, [ n ] );
   if res[1] then
-    return [ res[2], "using the GAP Small Groups Library + sglppow package" ];
+    if n = 3^8 or IsPrimePowerInt(n) and Length(Factors(n))=7 then
+      return [ res[2], "using NrSmallGroups and SglPPow package" ];
+    else
+      return [ res[2], "using NrSmallGroups and GAP Small Groups Library" ];
+    fi;
   else
     return [ false, Concatenation( List( res[2], String ) ) ];
   fi;
