@@ -1,8 +1,7 @@
 LoadPackage("grpconst");
 LoadPackage("sglppow");
 LoadPackage("cubefree");
-
-
+Read("gnudata.g");
 
 IsSquareFree:= n -> ForAll( Collected( Factors(n) ), x -> x[2] = 1 );
 
@@ -14,6 +13,10 @@ if not IsPosInt(n) then
   Error("The argument of Gnu(n) must be a positive integer");
 fi;
 
+if IsBound(GNUDATA[n]) then
+  return GNUDATA[n];
+fi;
+  
 if IsCubeFree( n ) then
   res := NumberCFGroups( n );
   return [ res, Concatenation( "using NumberCFGroups from CubeFree ",
