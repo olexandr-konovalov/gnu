@@ -1,5 +1,5 @@
 LoadPackage("scscp");
-server:="scscp-docker.cloudapp.net";
+server:="scscp.gap-system.org";
 port:=26133;
 
 Gnu := n -> EvaluateBySCSCP( "Gnu", [n], server, port ).object;
