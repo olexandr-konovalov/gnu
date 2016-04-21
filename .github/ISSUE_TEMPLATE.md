@@ -1,4 +1,4 @@
-To submit new values of Gnu(n) to the database, please fill in the following details:
+To submit new values of Gnu(n) to the database, please provide the following details:
 - [ ] The order of the group: n = 
 - [ ] The number of groups of order n: Gnu(n) =  
 - [ ] Version of GAP
@@ -7,4 +7,4 @@ To submit new values of Gnu(n) to the database, please fill in the following det
 - [ ] Runtime required to calculate Gnu(n)
 - [ ] GAP code used for the calculation
 - [ ] Confirm that the output `r` of `ConstructAllGroups` is a *list* of groups: 
-      if `ForAll(r,IsGroup)` should returns `true`
+      `ForAll(r,IsGroup)` should return `true`
