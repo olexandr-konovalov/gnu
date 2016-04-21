@@ -54,3 +54,18 @@ are welcomed. They may be submitted as issues or pull requests. When
 a new issue or pull request will be created, you will see a template
 asking for additional details needed to verify your calculation and
 keep provenance of the data.
+
+You may find missing groups, for exampe, by reading `gnuclient.g` into
+GAP and then executing the following code:
+
+```
+gap> Filtered([2001..2100], n -> Gnu(n)=false);
+[ 2024, 2025, 2040, 2048, 2052, 2058, 2064, 2072, 2079, 2080, 2088 ]
+```
+or, if you wish to see the progress of calculation
+```
+for n in [2001..2100] do Print(n,"\c"); if Gnu(n)=false then Print("\n"); else Print("\r");fi;od;
+```
+Some suggestions are published in the `WISHLIST.md` file.
+
+
