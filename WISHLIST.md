@@ -10,7 +10,7 @@ for n in [n1..n2] do Print(n,"\c"); if Gnu(n)=false then Print(" = ");PrintFacto
 One could run systematically `ConstructAllGroups` from the GrpConst package 
 (See <http://www.gap-system.org/Manuals/pkg/grpconst/htm/CHAP003.htm>), check
 that the resulting list contains groups but does not contain *lists of groups*
-and reduce this list by adding new entries to `gnudata.g`.
+and reduce the wishlist, adding new entries to `gnudata.g`.
 
 ```
 2024 = 2^3*11*23
