@@ -41,9 +41,16 @@ gap> List([105,128,2004,10000,2304,3^8,7^2*5^2*11*19],GnuWithExplanation);
   [ 8, "using NumberCFGroups from CubeFree 1.15" ] ]
 ```
 
-
-
 This is work in progress. Latter you will find here details of:
-* setting up your own server
+* setting up your own SCSCP server
 * using Gnu(n) locally
 
+### Contributing to the database
+
+The file `gnudata.g` contains some precomputed values of Gnu(n) for
+orders which are not covered by the GAP Small Groups Library, CubeFree
+and SglPPow packages. Contributions providing more values of Gnu(n) 
+are welcomed. They may be submitted as issues or pull requests. When 
+a new issue or pull request will be created, you will see a template
+asking for additional details needed to verify your calculation and
+keep provenance of the data.
