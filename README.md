@@ -50,25 +50,14 @@ This is work in progress. Latter you will find here details of:
 The file `gnudata.g` contains some precomputed values of Gnu(n) for
 orders which are not covered by the GAP Small Groups Library, CubeFree
 and SglPPow packages. Contributions providing more values of Gnu(n) 
-are welcomed. They may be submitted as issues or pull requests. When 
-a new issue or pull request will be created, you will see a template
+are welcomed. They may be submitted as issues or pull requests (see
+an example at <https://github.com/alex-konovalov/gnu/issues/12>).
+When a new issue or pull request will be created, you will see a template
 asking for additional details needed to verify your calculation and
-keep provenance of the data.
-
-You may find missing groups, for exampe, by reading `gnuclient.g` into
-GAP and then executing the following code:
-
-```
-gap> Filtered([2001..2100], n -> Gnu(n)=false);
-[ 2024, 2025, 2040, 2048, 2052, 2058, 2064, 2072, 2079, 2080, 2088 ]
-```
-or, if you wish to see the progress of calculation
-```
-for n in [2001..2100] do Print(n,"\c"); if Gnu(n)=false then Print("\n"); else Print("\r");fi;od;
-```
-Some suggestions are published in the `WISHLIST.md` file.
-
-You may generate parts of the submission automatically using the `grpconst.sh` scriopt, for example:
+keep provenance of the data. You may generate parts of the submission 
+automatically using the `grpconst.sh` script:
+<https://github.com/alex-konovalov/gnu/blob/master/grpconst.sh>. For 
+example:
 
 ```
 $ ./grpconst.sh 50531
@@ -88,6 +77,8 @@ Runtime: 411 ms
 Isomorphic groups eliminated!
 Gnu( 50531 ) = 5
 ```
+
 Then you will only need to add the description of the computer used for the computation.
 
-
+Some suggestions for missing orders are published in the `WISHLIST.md` file:
+<https://github.com/alex-konovalov/gnu/blob/master/WISHLIST.md>
