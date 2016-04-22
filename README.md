@@ -68,4 +68,26 @@ for n in [2001..2100] do Print(n,"\c"); if Gnu(n)=false then Print("\n"); else P
 ```
 Some suggestions are published in the `WISHLIST.md` file.
 
+You may generate parts of the submission automatically using the `grpconst.sh` scriopt, for example:
+
+```
+$ ./grpconst.sh 50531
+****************************************
+Constructing all groups of order 50531
+****************************************
+#I  compute extensions of 5 groups of order 2197
+#I  start extending group 1
+...
+...
+****************************************
+GAP      4.8.3
+CubeFree 1.15
+GrpConst 2.5
+SglPPow  1.1
+Runtime: 411 ms
+Isomorphic groups eliminated!
+Gnu( 50531 ) = 5
+```
+Then you will only need to add the description of the computer used for the computation.
+
 
