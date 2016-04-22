@@ -1,20 +1,23 @@
 The following list contains all group orders up to 10000 which are not 
 currently avalable from the combination of the GAP Small Groups Library 
 and SglPPow and CubeFree packages, and also some orders above 50000.
-
-For n<50000, some data which are not yet available in this service could 
-be found in the following table <http://www.icm.tu-bs.de/ag_algebra/software/small/number.html>
-
-It is produced after reading `gnuclient.g` using the command of the form
+It is produced after reading the file `gnuclient.g` available at
+<https://github.com/alex-konovalov/gnu/blob/master/gnuclient.g>
+and then using command of the form
 ```
 for n in [n1..n2] do Print(n,"\c"); if Gnu(n)=false then Print(" = ");PrintFactorsInt(n); Print("\n"); else Print("\r");fi;od;
 ```
+For n<50000, some data which are not yet available in this service could 
+be found at http://www.icm.tu-bs.de/ag_algebra/software/small/number.html.
 
 One could run systematically `ConstructAllGroups` from the GrpConst package 
 (See <http://www.gap-system.org/Manuals/pkg/grpconst/htm/CHAP003.htm>), check
 that the resulting list contains groups but does not contain *lists of groups*
 and reduce the wishlist, adding new entries to `gnudata.g`. It may be useful
 to call `SetInfoLevel(InfoGrpCon,5)` before the calculation to see its progress.
+The best way to run this automatically is to use the `grpconst.sh` script from
+https://github.com/alex-konovalov/gnu/blob/master/grpconst.sh as shown in the
+README.md file at https://github.com/alex-konovalov/gnu/blob/master/README.md.
 
 ```
 2024 = 2^3*11*23
