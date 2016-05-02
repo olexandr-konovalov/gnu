@@ -22,7 +22,6 @@ README.md file at https://github.com/alex-konovalov/gnu/blob/master/README.md.
 ```
 2048 = 2^11
 
-2088 = 2^3*3^2*29
 2106 = 2*3^4*13
 2112 = 2^6*3*11
 2120 = 2^3*5*53
