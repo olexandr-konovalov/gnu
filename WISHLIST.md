@@ -36,7 +36,6 @@ README.md file at https://github.com/alex-konovalov/gnu/blob/master/README.md.
 2120 = 2^3*5*53
 2128 = 2^4*7*19
 2136 = 2^3*3*89
-2160 = 2^4*3^3*5
 2184 = 2^3*3*7*13
 2200 = 2^3*5^2*11
 2208 = 2^5*3*23
