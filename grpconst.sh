@@ -30,14 +30,13 @@ else
   t2:=Runtime();;
   Print("****************************************\n");
   Print("GAP      ", GAPInfo.Version, "\n");
-  Print("CubeFree ", GAPInfo.PackagesInfo.cubefree[1].Version, "\n");
   Print("GrpConst ", GAPInfo.PackagesInfo.grpconst[1].Version, "\n");
+  Print("CubeFree ", GAPInfo.PackagesInfo.cubefree[1].Version, "\n");
   Print("SglPPow  ", GAPInfo.PackagesInfo.sglppow[1].Version, "\n");
- 
   Print("Runtime: ", t2-t1, " ms\n");
   if ForAll(r,IsGroup) then
-    Print("Isomorphic groups eliminated!\n");
-    Print("Gnu( " , n , " ) = ", Length(r), "\n");
+    Print("Isomorphic groups eliminated\n");
+    Print("gnu(" , n , ") = ", Length(r), "\n");
   else
     Print("Constructed a list of length ", Length(r), "\n");
     Print("but can not check that it is irredundant\n");
