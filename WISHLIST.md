@@ -20,7 +20,6 @@ https://github.com/alex-konovalov/gnu/blob/master/grpconst.sh as shown in the
 README.md file at https://github.com/alex-konovalov/gnu/blob/master/README.md.
 
 ```
-2025 = 3^4*5^2
 2040 = 2^3*3*5*17
 2048 = 2^11
 2052 = 2^2*3^3*19
