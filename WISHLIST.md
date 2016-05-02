@@ -214,7 +214,6 @@ README.md file at https://github.com/alex-konovalov/gnu/blob/master/README.md.
 3864 = 2^3*3*7*23
 3872 = 2^5*11^2
 3880 = 2^3*5*97
-3888 = 2^4*3^5
 3912 = 2^3*3*163
 3915 = 3^3*5*29
 3920 = 2^4*5*7^2
