@@ -6,6 +6,7 @@ GNUDATA[2025]:=[63, "precomputed using GrpConst package"];
 GNUDATA[2040]:=[175, "precomputed using GrpConst package"];
 GNUDATA[2052]:=[205, "precomputed using GrpConst package"];
 GNUDATA[2058]:=[91, "precomputed using GrpConst package"];
+GNUDATA[2064]:=[222, "precomputed using GrpConst package"];
 GNUDATA[2160]:=[3429, "precomputed using GrpConst package"];
 GNUDATA[2304]:=[15756130,"http://dx.doi.org/10.1016/j.jalgebra.2013.09.028"];
 GNUDATA[3600]:=[4484, "precomputed using GrpConst package"];
