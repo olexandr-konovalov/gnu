@@ -186,7 +186,6 @@ README.md file at https://github.com/alex-konovalov/gnu/blob/master/README.md.
 3576 = 2^3*3*149
 3584 = 2^9*7
 3591 = 3^3*7*19
-3600 = 2^4*3^2*5^2
 3608 = 2^3*11*41
 3618 = 2*3^3*67
 3624 = 2^3*3*151
