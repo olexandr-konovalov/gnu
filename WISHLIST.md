@@ -908,7 +908,6 @@ README.md file at https://github.com/alex-konovalov/gnu/blob/master/README.md.
 ```
 50000 = 2^4*5^5
 50008 = 2^3*7*19*47
-50016 = 2^5*3*521
 50024 = 2^3*13^2*37
 50031 = 3^3*17*109
 50032 = 2^4*53*59
