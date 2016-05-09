@@ -900,7 +900,6 @@ README.md file at https://github.com/alex-konovalov/gnu/blob/master/README.md.
 9976 = 2^3*29*43
 9984 = 2^8*3*13
 9990 = 2*3^3*5*37
-10000 = 2^4*5^4
 ```
 
 # Group orders between 50000 and 51000
