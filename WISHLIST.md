@@ -8,7 +8,7 @@ and then using command of the form
 for n in [n1..n2] do Print(n,"\c"); if Gnu(n)=false then Print(" = ");PrintFactorsInt(n); Print("\n"); else Print("\r");fi;od;
 ```
 For n<50000, some data which are not yet available in this service could 
-be found at http://www.icm.tu-bs.de/ag_algebra/software/small/number.html.
+be found at <http://www.icm.tu-bs.de/ag_algebra/software/small/number.html>.
 
 One could run systematically `ConstructAllGroups` from the GrpConst package 
 (See <http://www.gap-system.org/Manuals/pkg/grpconst/htm/CHAP003.htm>), check
@@ -20,7 +20,7 @@ https://github.com/alex-konovalov/gnu/blob/master/grpconst.sh as shown in the
 README.md file at https://github.com/alex-konovalov/gnu/blob/master/README.md.
 
 ```
-2048 = 2^11
+2048 = 2^11 - ConstructAllGroups reports "prime powers in order are too large"
 
 2106 = 2*3^4*13
 2112 = 2^6*3*11
@@ -905,7 +905,7 @@ README.md file at https://github.com/alex-konovalov/gnu/blob/master/README.md.
 # Group orders between 50000 and 51000
 
 ```
-50000 = 2^4*5^5
+50000 = 2^4*5^5 - ConstructAllGroups reports "prime powers in order are too large"
 50048 = 2^7*17*23
 50058 = 2*3^5*103
 50064 = 2^4*3*7*149
