@@ -909,7 +909,6 @@ README.md file at https://github.com/alex-konovalov/gnu/blob/master/README.md.
 50048 = 2^7*17*23
 50058 = 2*3^5*103
 50064 = 2^4*3*7*149
-50078 = 2*7^3*73
 50080 = 2^5*5*313
 50085 = 3^3*5*7*53
 50088 = 2^3*3*2087
