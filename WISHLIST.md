@@ -908,7 +908,6 @@ README.md file at https://github.com/alex-konovalov/gnu/blob/master/README.md.
 50000 = 2^4*5^5 - ConstructAllGroups reports "prime powers in order are too large"
 50048 = 2^7*17*23
 50112 = 2^6*3^3*29
-50136 = 2^3*3*2089
 50160 = 2^4*3*5*11*19
 50166 = 2*3^3*929
 50176 = 2^10*7^2
