@@ -33,6 +33,7 @@ GNUDATA[50080]:=[1434, "precomputed using GrpConst package"];
 GNUDATA[50085]:=[13, "precomputed using GrpConst package"];
 GNUDATA[50088]:=[39, "precomputed using GrpConst package"];
 GNUDATA[50096]:=[177, "precomputed using GrpConst package"];
+GNUDATA[50120]:=[126, "precomputed using GrpConst package"];
 GNUDATA[50531]:=[5, "precomputed using GrpConst package"];
 GNUDATA[50841]:=[13, "precomputed using GrpConst package"];
 GNUDATA[50949]:=[60, "precomputed using GrpConst package"];
