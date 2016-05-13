@@ -8,7 +8,7 @@
 #R  Read the declaration files.
 ##
 ReadPackage("gnu", "data/gnudata.g");
-ReadPackage( "gnu", "gnu.g" );
+ReadPackage( "gnu", "gap/gnu.g" );
 
 #E  init.g . . . . . . . . . . . . . . . . . . . . . . . . . . . .  ends here
 
