@@ -1,7 +1,7 @@
 #############################################################################
 ##  
 ##  PackageInfo.g              Gnu package                Alexander Konovalov
-
+##
 SetPackageInfo( rec(
 PackageName := "Gnu",
 Subtitle := "A database of numbers of isomorphism types of finite groups of given order",

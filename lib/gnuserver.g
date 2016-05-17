@@ -1,3 +1,14 @@
+#############################################################################
+##
+##  gnuserver.g                Gnu package                Alexander Konovalov
+##
+##
+##  This file starts GAP SCSCP server which provides `Gnu` and `GnuExplained`
+##  as remote procedures with the same names.
+##
+##  This file is not read during package loading, since it is only needed to
+##  start the GAP SCSCP server.
+##
 LoadPackage("scscp");
 LoadPackage("gnu");
 

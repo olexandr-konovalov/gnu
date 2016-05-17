@@ -1,6 +1,32 @@
+#############################################################################
+##
+##  gnudata.g                  Gnu package                Alexander Konovalov
+##
+##
+##  This is the main database of precomputed data contributed to the package.
+##  The idea of this file is that it has exactly one line per order so that
+##  one could easily trace the source using version control tools. The lines
+##  are sorted by the order of the group.
+##
 GNUDATA:=[];
+
+#############################################################################
+##
+##  Standard sources of the data to be defined here
+##
 WITH_GC:="precomputed using GrpConst package";
 
+#############################################################################
+##
+##  GNU_SAVE(order,number,info)
+##
+##  This function stores gnu(order)=number in the database together with
+##  the info string.
+##
+##  The idea is that if the implementation of data storage will be changed
+##  in the future, it should support GNU_SAVE(order,number,info) to store
+##  the data, so all calls of GNU_SAVE below will remain intact.
+##
 GNU_SAVE:=function(order,number,info)
 GNUDATA[order]:=[number,info];
 end;
