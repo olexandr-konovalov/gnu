@@ -2,7 +2,7 @@ IsSquareFree:= n -> ForAll( Collected( Factors(n) ), x -> x[2] = 1 );
 
 IsCubeFree:= n -> ForAll( Collected( Factors(n) ), x -> x[2] <= 2 );
 
-GnuWithExplanation:=function(n)
+GnuExplained:=function(n)
 local res, nr;
 if not IsPosInt(n) then
   Error("The argument of Gnu(n) must be a positive integer");
@@ -41,7 +41,7 @@ fi;
 end;
 
 Gnu:=function(n)
-return GnuWithExplanation(n)[1];
+return GnuExplained(n)[1];
 end;
 
 GnuWishlist:=function( r )

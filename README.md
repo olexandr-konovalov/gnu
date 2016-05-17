@@ -13,16 +13,16 @@ p>11 and for groups of order 3^8.
 
 The demo version of this service is running in the cloud. To use
 it, read the file `gnuclient.g` into GAP. Then you will be able
-to use functions `Gnu` and `GnuWithExplanation`, for example:
+to use functions `Gnu` and `GnuExplained`, for example:
 
 ```
 gap> Gnu(1024);
 49487365422
 gap> Gnu(3^8);
 1396077
-gap> GnuWithExplanation(2304);
+gap> GnuExplained(2304);
 [ 15756130, "http://dx.doi.org/10.1016/j.jalgebra.2013.09.028" ]
-gap> GnuWithExplanation(13^7);
+gap> GnuExplained(13^7);
 [ 1600573, "using NrSmallGroups from SglPPow 1.1" ]
 ```
 
@@ -31,7 +31,7 @@ You may try the following to see various cases that may appear:
 ```
 gap> List([105,128,2004,10000,2304,3^8,7^2*5^2*11*19],Gnu);
 [ 2, 2328, 10, false, 15756130, 1396077, 8 ]
-gap> List([105,128,2004,10000,2304,3^8,7^2*5^2*11*19],GnuWithExplanation);
+gap> List([105,128,2004,10000,2304,3^8,7^2*5^2*11*19],GnuExplained);
 [ [ 2, "using NrSmallGroups and the GAP Small Groups Library" ], 
   [ 2328, "using NrSmallGroups and the GAP Small Groups Library" ], 
   [ 10, "using NrSmallGroups and the GAP Small Groups Library" ], 

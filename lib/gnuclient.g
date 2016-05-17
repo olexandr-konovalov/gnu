@@ -2,6 +2,6 @@ LoadPackage("scscp");
 server:="scscp.gap-system.org";
 port:=26133;
 
-Gnu := n -> EvaluateBySCSCP( "Gnu", [n], server, port ).object;
+GnuFromServer := n -> EvaluateBySCSCP( "Gnu", [n], server, port ).object;
 
-GnuWithExplanation := n -> EvaluateBySCSCP( "GnuWithExplanation", [n], server, port ).object;
+GnuExplainedFromServer := n -> EvaluateBySCSCP( "GnuExplained", [n], server, port ).object;
