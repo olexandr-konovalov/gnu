@@ -24,6 +24,15 @@ else
     res := NumberCFGroups( n );
     return [ res, Concatenation( "using NumberCFGroups from CubeFree ",
                                InstalledPackageVersion("cubefree")) ];
+  elif n<=50000 then
+    res := gnu50000[n];
+    if res[1]<>n then # this should never happen
+      Error("gnu50000.g corrupted");
+    elif res[2]<>fail then
+      return [ res[2], "http://www.icm.tu-bs.de/ag_algebra/software/small/number.html" ];
+    else
+      return [ false, Concatenation( "not stored in gnu50000 and no library of groups of size ", String(n) ) ];
+    fi;
   else
     return [ false, Concatenation( "the library of groups of size ", String(n), " is not available" ) ];
   fi;
