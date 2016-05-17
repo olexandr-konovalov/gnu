@@ -33,3 +33,15 @@ GnuFromServer := n -> EvaluateBySCSCP( "Gnu", [n], GNUserver, GNUport ).object;
 ##  GnuExplainedFromServer(n)
 ##
 GnuExplainedFromServer := n -> EvaluateBySCSCP( "GnuExplained", [n], GNUserver, GNUport ).object;
+
+#############################################################################
+##
+##  GnuWishlistFromServer(n)
+##
+GnuWishlistFromServer := n -> EvaluateBySCSCP( "GnuWishlist", [n], GNUserver, GNUport ).object;
+
+#############################################################################
+##
+##  NextUnknownGnuFromServer(n)
+##
+NextUnknownGnuFromServer := n -> EvaluateBySCSCP( "NextUnknownGnu", [n], GNUserver, GNUport ).object;
