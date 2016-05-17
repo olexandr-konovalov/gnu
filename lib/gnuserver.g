@@ -1,3 +1,4 @@
+LoadPackage("scscp");
 LoadPackage("gnu");
 
 InstallSCSCPprocedure( "GnuExplained", GnuExplained, "Number of groups of order n", 1, 1 );
