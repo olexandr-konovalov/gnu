@@ -1,5 +1,65 @@
 # gnu
 
+## A database of numbers of isomorphism types of finite groups of given order
+
+### What is gnu(n) ?
+
+For an integer n, the number of isomorphism types of finite groups of order n 
+is denoted by gnu(n), where "gnu" stands for the "**g**roup **nu**mber". The
+determination of all groups of a given order up to isomorphism is an interesting
+and challenging problem. For example, the number of groups of order n is the
+sequence (<https://oeis.org/A000001>) in OEIS, with the first unknown entry being
+gnu(2048). Known values of gnu(n) for 0 < n < 2048 are given in "Counting groups: 
+gnus, moas and other exotica" by John H. Conway, Heiko Dietrich and E.A. O’Brien
+(<https://www.math.auckland.ac.nz/~obrien/research/gnu.pdf>) which also discusses
+some properties of gnu(n) and related functions.
+
+### What is known for n > 2048 ?
+
+For n > 2048, the calculation of gnu(n) is highly irregular. Some orders are covered
+by the GAP Small Groups Library (<http://www.gap-system.org/Packages/sgl.html>) so
+the gnu(n) is returned by `NrSmallGroups(n)`. The recenlty submitted GAP package 
+SglPPow (<http://www.gap-system.org/Packages/sglppow.html>) by Michael Vaughan-Lee 
+and Bettina Eick adds access to groups of order p^7 for p > 11 and to groups of order 
+3^8 (it should be loaded with `LoadPackage("sglppow")`. For groups of cube-free order,
+the Cubefee package (<http://www.gap-system.org/Packages/cubefree.html>) by Heiko 
+Dietrich calculates gnu(n) with `NumberCFGroups(n)`.
+
+### How to calculate gnu(n) for arbitrary n ?
+
+For groups of other orders one could try the GAP package GrpConst by Hans Ulrich 
+Besche and Bettina Eick (<http://www.gap-system.org/Packages/grpconst.html>) to 
+construct all groups of a given order using `ConstructAllGroups(n)`. As documented 
+at <http://www.gap-system.org/Manuals/pkg/grpconst/htm/CHAP003.htm>, this function 
+usually returns a list of groups, in which case gnu(n) is the length of this list.
+However, sometimes, it also contains lists of groups. In this case, one has to 
+check that groups from such lists are pairwise nin-isomorphic or remove duplicates.
+
+The runtime and memory requirements of `ConstructAllGroups` depend very much on n
+and may vary from minimalistic to practically unfeasible. The website of AG Algebra 
+und Diskrete Mathematik (TU Braunschweig) provides the table containing gnu(n) for 
+many n < 50000: <http://www.icm.tu-bs.de/ag_algebra/software/small/number.html>.
+These numbers were taken from the Small Groups Library or calculated with the 
+GrpConst package. There is no information in the table for 1082 orders for which
+the computation apparently was not feasible in the time of publishing the table.
+
+### Goals of this package
+
+As we see, currently there is no uniform access to the calculation of gnu(n) in
+GAP even in the case when it is feasible, since one has to call different functions
+in a different way, dependently on n. Furthermore, users who calculate new values 
+of gnu(n) have no easy way to share their data to make them accessible to others.
+Finally, there is no provenance of the data: who calculated them and when, using
+which hardware and which versions of GAP and relevant packages, how much memory 
+and runtime were needed. These missing details also hinder verification of the 
+results, since one does not know in avance which resources should be dedicated 
+to the experiment.
+
+This package addresses these problems by:
+- offering local access to the data via Gnu and GnuExplained 
+- offering remoted access to the data via GnuFromServer and GnuExplainedFromServer
+- using version control based development model
+
 This repository contains a simple implementation of the GAP SCSCP 
 server providing Gnu(n) - the number of groups of order n. It is
 meant to be an example demonstrating how a remote procedure call 
