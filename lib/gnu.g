@@ -43,3 +43,14 @@ end;
 Gnu:=function(n)
 return GnuWithExplanation(n)[1];
 end;
+
+GnuWishlist:=function( r )
+return Filtered( r, n -> Gnu(n) = false );
+end;
+
+NextUnknownGnu:=function( n )
+repeat
+  n := n + 1;
+until Gnu(n) = false;
+return n;
+end;
