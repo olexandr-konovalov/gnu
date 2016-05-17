@@ -1,7 +1,13 @@
 This directory contains the following files:
 
+- gnudata.g
 - gnu50000.txt
 - gnu50000.g
+
+`gnudata.g` is the main database of precomputed data contributed to the package.
+The idea of this file is that it has exactly one line per order so that one
+could easily trace the source using version control tools. The lines are
+sorted by the order of the group.
 
 `gnu50000.txt` is the text file with gnu(n) for n<50000 from TUBS page
 <http://www.icm.tu-bs.de/ag_algebra/software/small/number.html>. It 
