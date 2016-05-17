@@ -1,16 +1,16 @@
 # gnu
 
-## A database of numbers of isomorphism types of finite groups of given order
+## Crowdsourcing project for the database of numbers of isomorphism types of finite groups
 
 ### What is gnu(n) ?
 
 For an integer n, the number of isomorphism types of finite groups of order n 
-is denoted by gnu(n), where "gnu" stands for the "**g**roup **nu**mber". The
-determination of all groups of a given order up to isomorphism is an interesting
-and challenging problem. For example, the number of groups of order n is the
-sequence (<https://oeis.org/A000001>) in OEIS, with the first unknown entry being
+is denoted by gnu(n), where "gnu" stands for the "Group NUmber". The problem
+of the determination of all groups of a given order up to isomorphism is very
+interesting and challenging. For example, the sequence (<https://oeis.org/A000001>) 
+in OEIS is the number of groups of order n, with the first unknown entry being
 gnu(2048). Known values of gnu(n) for 0 < n < 2048 are given in "Counting groups: 
-gnus, moas and other exotica" by John H. Conway, Heiko Dietrich and E.A. O’Brien
+gnus, moas and other exotica" by John H. Conway, Heiko Dietrich and Eamonn A. O’Brien
 (<https://www.math.auckland.ac.nz/~obrien/research/gnu.pdf>) which also discusses
 some properties of gnu(n) and related functions.
 
@@ -32,8 +32,8 @@ Besche and Bettina Eick (<http://www.gap-system.org/Packages/grpconst.html>) to
 construct all groups of a given order using `ConstructAllGroups(n)`. As documented 
 at <http://www.gap-system.org/Manuals/pkg/grpconst/htm/CHAP003.htm>, this function 
 usually returns a list of groups, in which case gnu(n) is the length of this list.
-However, sometimes, it also contains lists of groups. In this case, one has to 
-check that groups from such lists are pairwise nin-isomorphic or remove duplicates.
+However, sometimes this list contains sublists. In this case, one has to check each
+such sublist contains groups which are pairwise non-isomorphic, or remove duplicates.
 
 The runtime and memory requirements of `ConstructAllGroups` depend very much on n
 and may vary from minimalistic to practically unfeasible. The website of AG Algebra 
@@ -41,28 +41,34 @@ und Diskrete Mathematik (TU Braunschweig) provides the table containing gnu(n) f
 many n < 50000: <http://www.icm.tu-bs.de/ag_algebra/software/small/number.html>.
 These numbers were taken from the Small Groups Library or calculated with the 
 GrpConst package. There is no information in the table for 1082 orders for which
-the computation apparently was not feasible in the time of publishing the table.
+the computation apparently was unfeasible at the time of publishing the table.
 
 ### Goals of this package
 
 As we see, currently there is no uniform access to the calculation of gnu(n) in
 GAP even in the case when it is feasible, since one has to call different functions
-in a different way, dependently on n. Furthermore, users who calculate new values 
+in a different way, dependently on n. Also, these data are accessible only from
+within the working GAP installation. Furthermore, users who calculate new values 
 of gnu(n) have no easy way to share their data to make them accessible to others.
-Finally, there is no provenance of the data: who calculated them and when, using
-which hardware and which versions of GAP and relevant packages, how much memory 
-and runtime were needed. These missing details also hinder verification of the 
-results, since one does not know in avance which resources should be dedicated 
-to the experiment.
+Finally, there is no provenance of the data, i.e. storing who calculated them and 
+when, using which hardware and which versions of GAP and relevant packages, and 
+how much memory and runtime were needed. These missing details also hinder 
+verification of the results, since one does not know in avance which resources 
+should be dedicated to rerun the experiment. 
 
-This package addresses these problems by:
-- providing uniform access to the calculation of gnu(n) using a single function
-- offering both the ability to install package locally and to access it remotely
-  without its local installation
-- using GitHub-based development model and recording provenance information
+The Gnu package addresses these problems by:
+- Providing uniform access to the calculation of gnu(n) using a single function.
+- Offering both the ability to install package locally and to access it remotely
+  without its local installation.
+- Providing remote data via SCSCP (Symbolic Computation Software Composablity 
+  Protocol) to make them accessible to any SCSCP-compliant software (see the
+  list at <http://www.symbolic-computing.org>.
+- Using GitHub-based development model and recording provenance information
   using revision history.
 
 ### Local installation
+
+To use the package locally, first you have to install the GAP system. 
 
 The package is installed in the same way like other GAP packages. It is
 suggested to install it as a custom package in the `.gap/pkg` subdirectory
