@@ -68,14 +68,15 @@ The Gnu package addresses these problems by:
 
 ### Local installation
 
-To use the package locally, first you have to install the GAP system. 
-
-The package is installed in the same way like other GAP packages. It is
-suggested to install it as a custom package in the `.gap/pkg` subdirectory
-of your home directory instead of placing it into the `gap4rN/pkg` directory
-of your GAP installation. Since the package is regularly updated with new
-data, you may use git to clone it and subsequently pull changes from the main
-repository. To do this, change to the `.gap/pkg` directory and call
+To use the package locally, first you have to install the GAP system using the
+source distrubution from http://www.gap-system.org/Releases/. Please ensure
+that you build packages as described there as well. After that, the Gnu package 
+could be installed in the same way like other GAP packages that do not require
+compilation. It is suggested to install it as a custom package in the `.gap/pkg` 
+subdirectory of your home directory instead of placing it into the `gap4rN/pkg` 
+directory of your GAP installation. Since the package is regularly updated with 
+new data, you may use git to clone it and subsequently pull changes from the 
+main repository. To do this, change to the `.gap/pkg` directory and call
 ```
 git clone https://github.com/alex-konovalov/gnu.git
 ```
@@ -85,7 +86,9 @@ change to that directory and call
 git pull
 ```
 Alternatively, you may download the repository as a zip-archive from
-https://github.com/alex-konovalov/gnu/archive/master.zip
+<https://github.com/alex-konovalov/gnu/archive/master.zip> and later
+update it manually by dowloading new zip-archive and unpacking it to
+replace the previous installation of the Gnu package.
 
 After loading the package with `LoadPackage("gnu");` you should be able to
 use it as follows:
@@ -121,17 +124,17 @@ gap>
 
 ### Remote connection
 
-It is also possible to access the data without local installation
-by accessing the dedicated GAP SCSCP server running in the Microsoft
-Azure cloud. To do this, first you need to load the SCSCP package:
+It is also possible to access the data without local installation by 
+accessing the dedicated GAP SCSCP server running in the Microsoft Azure 
+cloud. To do this from GAP, first you need to load the SCSCP package:
 
 ```
 gap> LoadPackage("scscp");
 ```
 
 Note that SCSCP package requires the IO package, and the IO package needs
-to be compiled on UNIX systems (for Windows, the GAP distributions comes
-with compiled binaries for the IO package).
+compilation on UNIX systems (for Windows, the GAP distributions comes with 
+compiled binaries for the IO package).
 
 After that, download and read (or copy and paste) the following file into GAP:
 https://raw.githubusercontent.com/alex-konovalov/gnu/master/lib/gnuclient.g
@@ -152,6 +155,11 @@ gap> GnuWishlistFromServer([50000..50100]);
 
 If you have locally installed package, then the functions mentioned in this
 section will become available after its loading.
+
+To access the GAP SCSCP server from other SCSCP-compliant systems, follow
+their documentation for SCSCP client functionality and use the server
+name scscp.gap-system.org and port number 26133 similarly to the calls 
+in <https://github.com/alex-konovalov/gnu/blob/master/lib/gnuclient.g>
 
 
 ### Contributing to the database
