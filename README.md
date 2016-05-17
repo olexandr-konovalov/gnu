@@ -56,54 +56,97 @@ results, since one does not know in avance which resources should be dedicated
 to the experiment.
 
 This package addresses these problems by:
-- offering local access to the data via Gnu and GnuExplained 
-- offering remoted access to the data via GnuFromServer and GnuExplainedFromServer
-- using version control based development model
+- providing uniform access to the calculation of gnu(n) using a single function
+- offering both the ability to install package locally and to access it remotely
+  without its local installation
+- using GitHub-based development model and recording provenance information
+  using revision history.
 
-This repository contains a simple implementation of the GAP SCSCP 
-server providing Gnu(n) - the number of groups of order n. It is
-meant to be an example demonstrating how a remote procedure call 
-protocol, called SCSCP, may be used to provide mathematical services
-to clients representing computer algebra systems and other software.
+### Local installation
 
-This version uses Cubefree package for cubefree orders, otherwise
-it delegates to NrSmallGroups. The latter is enhanced by SglPPow 
-package which extends NrSmallGroups for groups of order p^7 for 
-p>11 and for groups of order 3^8.
+The package is installed in the same way like other GAP packages. It is
+suggested to install it as a custom package in the `.gap/pkg` subdirectory
+of your home directory instead of placing it into the `gap4rN/pkg` directory
+of your GAP installation. Since the package is regularly updated with new
+data, you may use git to clone it and subsequently pull changes from the main
+repository. To do this, change to the `.gap/pkg` directory and call
+```
+git clone https://github.com/alex-konovalov/gnu.git
+```
+This will create the directory `gnu`. Later when you will need to pull changes,
+change to that directory and call
+```
+git pull
+```
+Alternatively, you may download the repository as a zip-archive from
+https://github.com/alex-konovalov/gnu/archive/master.zip
 
-The demo version of this service is running in the cloud. To use
-it, read the file `gnuclient.g` into GAP. Then you will be able
-to use functions `Gnu` and `GnuExplained`, for example:
+After loading the package with `LoadPackage("gnu");` you should be able to
+use it as follows:
 
 ```
-gap> Gnu(1024);
-49487365422
-gap> Gnu(3^8);
-1396077
-gap> GnuExplained(2304);
-[ 15756130, "http://dx.doi.org/10.1016/j.jalgebra.2013.09.028" ]
-gap> GnuExplained(13^7);
-[ 1600573, "using NrSmallGroups from SglPPow 1.1" ]
+gap> Gnu(10000);
+4728
+gap> GnuExplained(10000);
+[ 4728, "precomputed using GrpConst package" ]
+gap> NextUnknownGnu(10000);
+10080
+gap> GnuWishlist([2000..3000]);
+[ 2048, 2240, 2496, 2560, 2592, 2688, 2880, 2916 ]
+gap> List([105,128,2004,10000,2304,3^8,7^2*5^2*11*19,50000],Gnu);
+[ 2, 2328, 10, 4728, 15756130, 1396077, 8, false ]
 ```
 
-You may try the following to see various cases that may appear:
+You may see some more examples of explanations how the values of gnu(n)
+were obtained in the following example:
 
 ```
-gap> List([105,128,2004,10000,2304,3^8,7^2*5^2*11*19],Gnu);
-[ 2, 2328, 10, false, 15756130, 1396077, 8 ]
-gap> List([105,128,2004,10000,2304,3^8,7^2*5^2*11*19],GnuExplained);
-[ [ 2, "using NrSmallGroups and the GAP Small Groups Library" ], 
-  [ 2328, "using NrSmallGroups and the GAP Small Groups Library" ], 
-  [ 10, "using NrSmallGroups and the GAP Small Groups Library" ], 
-  [ false, "the library of groups of size 10000 is not available" ], 
-  [ 15756130, "http://dx.doi.org/10.1016/j.jalgebra.2013.09.028" ], 
-  [ 1396077, "using NrSmallGroups from SglPPow 1.1" ], 
-  [ 8, "using NumberCFGroups from CubeFree 1.15" ] ]
+gap> List([105,128,2004,10000,2304,3^8,7^2*5^2*11*19,50000],GnuExplained);
+[ [ 2, "using NrSmallGroups and the GAP Small Groups Library" ],
+  [ 2328, "using NrSmallGroups and the GAP Small Groups Library" ],
+  [ 10, "using NrSmallGroups and the GAP Small Groups Library" ],
+  [ 4728, "precomputed using GrpConst package" ],
+  [ 15756130, "http://dx.doi.org/10.1016/j.jalgebra.2013.09.028" ],
+  [ 1396077, "using NrSmallGroups from SglPPow 1.1" ],
+  [ 8, "using NumberCFGroups from CubeFree 1.15" ],
+  [ false, "not stored in gnu50000 and no library of groups of size 50000" ] ]
+gap> 
 ```
 
-This is work in progress. Latter you will find here details of:
-* setting up your own SCSCP server
-* using Gnu(n) locally
+### Remote connection
+
+It is also possible to access the data without local installation
+by accessing the dedicated GAP SCSCP server running in the Microsoft
+Azure cloud. To do this, first you need to load the SCSCP package:
+
+```
+gap> LoadPackage("scscp");
+```
+
+Note that SCSCP package requires the IO package, and the IO package needs
+to be compiled on UNIX systems (for Windows, the GAP distributions comes
+with compiled binaries for the IO package).
+
+After that, download and read (or copy and paste) the following file into GAP:
+https://raw.githubusercontent.com/alex-konovalov/gnu/master/lib/gnuclient.g
+
+Now you are able to use remote counterparts of the commands shown in the
+previous section:
+
+```
+gap> GnuFromServer(50016);
+1208
+gap> GnuExplainedFromServer(50080);
+[ 1434, "precomputed using GrpConst package" ]
+gap> NextUnknownGnuFromServer(50080);
+50112
+gap> GnuWishlistFromServer([50000..50100]);
+[ 50000, 50048 ]
+```
+
+If you have locally installed package, then the functions mentioned in this
+section will become available after its loading.
+
 
 ### Contributing to the database
 
@@ -138,7 +181,12 @@ Isomorphic groups eliminated!
 Gnu( 50531 ) = 5
 ```
 
-Then you will only need to add the description of the computer used for the computation.
+Then you will only need to add the description of the computer used for the
+computation.
 
-Some suggestions for missing orders are published in the `WISHLIST.md` file:
-<https://github.com/alex-konovalov/gnu/blob/master/WISHLIST.md>
+NOTE: In case when the isomorphic groups can not be eliminated, further check 
+is needed. See, for example, <https://github.com/alex-konovalov/gnu/issues/18>.
+
+Missing orders can be determined using `NextUnknownGnu`, `GnuWishlist` and
+their RPC counterparts `NextUnknownGnuFromServer` and `GnuWishlistFromServer`
+as shown above.
