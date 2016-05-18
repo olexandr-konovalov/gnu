@@ -64,7 +64,7 @@ The Gnu package addresses these problems by:
   without its local installation.
 - Providing remote data via SCSCP (Symbolic Computation Software Composablity 
   Protocol) to make them accessible to any SCSCP-compliant software (see the
-  list at <http://www.symbolic-computing.org>.
+  list at <http://www.symbolic-computing.org>).
 - Using GitHub-based development model and recording provenance information
   using revision history.
 
