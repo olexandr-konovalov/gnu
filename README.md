@@ -47,14 +47,16 @@ the computation apparently was unfeasible at the time of publishing the table.
 
 As we see, currently there is no uniform access to the calculation of gnu(n) in
 GAP even in the case when it is feasible, since one has to call different functions
-in a different way, dependently on n. Also, these data are accessible only from
-within the working GAP installation. Furthermore, users who calculate new values 
-of gnu(n) have no easy way to share their data to make them accessible to others.
-Finally, there is no provenance of the data, i.e. storing who calculated them and 
-when, using which hardware and which versions of GAP and relevant packages, and 
-how much memory and runtime were needed. These missing details also hinder 
-verification of the results, since one does not know in avance which resources 
-should be dedicated to rerun the experiment. 
+in a different way, dependently on n. Even finding all known gnu(n) for a list 
+of integers with `NrSmallGroups` is not straightforward, since GAP enters a break
+loop when the library of groups of order n is not available. Also, these data are 
+accessible only from within the working GAP installation. Furthermore, users who 
+calculate new values of gnu(n) have no easy way to share their data to make them 
+accessible to others. Finally, there is no provenance of the data, i.e. storing
+who calculated them and when, using which hardware and which versions of GAP and
+relevant packages, and how much memory and runtime were needed. These missing
+details also hinder verification of the results, since one does not know in 
+advance which resources should be dedicated to rerun the experiment. 
 
 The Gnu package addresses these problems by:
 - Providing uniform access to the calculation of gnu(n) using a single function.
@@ -164,17 +166,48 @@ in <https://github.com/alex-konovalov/gnu/blob/master/lib/gnuclient.g>
 
 ### Contributing to the database
 
-The file `gnudata.g` contains some precomputed values of Gnu(n) for
-orders which are not covered by the GAP Small Groups Library, CubeFree
-and SglPPow packages. Contributions providing more values of Gnu(n) 
-are welcomed. They may be submitted as issues or pull requests (see
-an example at <https://github.com/alex-konovalov/gnu/issues/12>).
-When a new issue or pull request will be created, you will see a template
-asking for additional details needed to verify your calculation and
-keep provenance of the data. You may generate parts of the submission 
-automatically using the `grpconst.sh` script:
-<https://github.com/alex-konovalov/gnu/blob/master/grpconst.sh>. For 
-example:
+You can help to the development of this database with the following
+contributions:
+- submitting new values of gnu(n)
+- recording information about partial results to be pursued further
+- verifying existing entries (possibly using other hardware, operating 
+  systems, new releases of GAP and related packages)
+- improving the functionality of this package
+
+You can submit new values of gnu(n) as new issues or pull requests 
+to this repository. The template for the new issue/pull request will ask
+you to check that you provide the following details:
+- Version of GAP and critical packages: GrpConst, Cubefree, etc.
+- Brief description of the computer used for the calculation 
+  (operating system, processor, RAM)
+- Runtime required for the calculation
+- GAP commands used for the calculation
+- Confirm that the output `r` of `ConstructAllGroups` is a *list* of 
+  groups (`ForAll(r,IsGroup)` should return `true`), or otherwise confirm 
+  that if the output contained lists of groups, then those groups were 
+  also shown to be pairwise non-isomorphic.
+
+This information will be used to re-run your calculations and add to the
+database after such validation.
+
+Orders that are currently not included in the database can be determined 
+using `NextUnknownGnu`, `GnuWishlist` and their RPC counterparts 
+`NextUnknownGnuFromServer` and `GnuWishlistFromServer` as shown above.
+
+For the partial results, please create new issues in this repository
+and tell what have you tried and at which step the calculation stopped.
+It will be useful to know, for example, about time-consuming cases that
+did not finish after substantial amount of time, or run out of memory,
+or where only the first step of the calculation had been completed, but
+checking the non-isomorphism has not been done. 
+
+You can also help with validating new submissions or rechecking existing 
+ones, and with improving mathematical functionality of the package or
+its infrastructural part.
+
+You may generate parts of the submission automatically using the `grpconst.sh` 
+script: <https://github.com/alex-konovalov/gnu/blob/master/grpconst.sh> (you 
+will need to edit it to adjust GAP path). For example:
 
 ```
 $ ./grpconst.sh 50531
@@ -195,12 +228,11 @@ Isomorphic groups eliminated!
 Gnu( 50531 ) = 5
 ```
 
-Then you will only need to add the description of the computer used for the
-computation.
+In this case, you can copy and paste the last block of lines into your 
+submission, and will only need to add the description of the computer 
+used for the computation. However, in case when the isomorphic groups 
+can not be eliminated, further check will be needed. See an example in
+<https://github.com/alex-konovalov/gnu/issues/18>.
 
-NOTE: In case when the isomorphic groups can not be eliminated, further check 
-is needed. See, for example, <https://github.com/alex-konovalov/gnu/issues/18>.
-
-Missing orders can be determined using `NextUnknownGnu`, `GnuWishlist` and
-their RPC counterparts `NextUnknownGnuFromServer` and `GnuWishlistFromServer`
-as shown above.
+Further guidelines could be found in the CONTRIBUTING.md file here:
+<https://github.com/alex-konovalov/gnu/blob/master/CONTRIBUTING.md>
