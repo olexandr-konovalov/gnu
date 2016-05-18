@@ -38,6 +38,29 @@ NOTE: In case when the isomorphic groups can not be eliminated, further check
 is needed. See, for example, <https://github.com/alex-konovalov/gnu/issues/18>.
 
 
+# Rules of submitting values of gnu(n)
+
+Please follow the following rules to ensure that information is recorded
+in a trackable and searchable way:
+- submit strictly one issue or pull request per group order
+- if gnu(n) is determined, the title of the issue should start with
+  `gnu(n)=X` where n and X are replaced by corresponding numbers.
+- to report partial results for some n, the title of the issue should
+  start with `gnu(n)` and edited afterwards in case the calculation 
+  will be completed.
+- use the style `gnu(n)` instead of `Gnu( n )`: no capital `G` and no
+  padding in the parentheses.
+- use one or more appropriate labels: "validation needed" for new 
+  submissions, "non-isomorphism check needed" for results of 
+  `ConstructAllGroups` containing sublists, "challenge" for calculations
+  that are exceptionally runtime or memory-demanding. In doubt, use no 
+  label - it will be assigned later.
+
+Also (for those making commits), commit message must contain all provenance data 
+so that it will be possible to recover them using a clone of the repository (see 
+e.g. <https://github.com/alex-konovalov/gnu/commit/e2968b12568b9d6c387d19d7bc22a3317c767e9c>).
+
+
 # Where is the wishlist for gnu(n)?
 
 There is no maintained wishlist for the values of gnu(n), because one could
@@ -87,4 +110,3 @@ It is also suggested to look on GitHub for open issues labeled "challenge",
 results (for example, run the construction part but were unable to verify
 non-isomorphism or run calculation for several days to no avail), please 
 also post them - they will be useful for further experiments.
-
