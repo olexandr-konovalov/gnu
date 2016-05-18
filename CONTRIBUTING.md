@@ -1,8 +1,50 @@
+### Contributing to the database
+
+The file `data/gnudata.g` contains some precomputed values of gnu(n) for
+orders which are not covered by the GAP Small Groups Library, CubeFree
+and SglPPow packages. Contributions providing more values of Gnu(n) 
+are welcomed. They may be submitted as issues or pull requests (see
+an example at <https://github.com/alex-konovalov/gnu/issues/12>).
+When a new issue or pull request will be created, you will see a template
+asking for additional details needed to verify your calculation and
+keep provenance of the data. You may generate parts of the submission 
+automatically using the `grpconst.sh` script:
+<https://github.com/alex-konovalov/gnu/blob/master/grpconst.sh>. For 
+example:
+
+```
+$ ./grpconst.sh 50531
+****************************************
+Constructing all groups of order 50531
+****************************************
+#I  compute extensions of 5 groups of order 2197
+#I  start extending group 1
+...
+...
+****************************************
+GAP      4.8.3
+CubeFree 1.15
+GrpConst 2.5
+SglPPow  1.1
+Runtime: 411 ms
+Isomorphic groups eliminated!
+Gnu( 50531 ) = 5
+```
+
+Then you will only need to add the description of the computer used for the
+computation.
+
+NOTE: In case when the isomorphic groups can not be eliminated, further check 
+is needed. See, for example, <https://github.com/alex-konovalov/gnu/issues/18>.
+
+
 # Where is the wishlist for gnu(n)?
 
 There is no maintained wishlist for the values of gnu(n), because one could
 always query the database locally or remotely to get the most up to date
-information. For example, one could get locally
+information. Missing orders can be determined using `NextUnknownGnu`, 
+`GnuWishlist` and their RPC counterparts `NextUnknownGnuFromServer` and 
+`GnuWishlistFromServer`. For example, one could get locally
 
 ```
 gap> NextUnknownGnu(10000);
@@ -45,3 +87,4 @@ It is also suggested to look on GitHub for open issues labeled "challenge",
 results (for example, run the construction part but were unable to verify
 non-isomorphism or run calculation for several days to no avail), please 
 also post them - they will be useful for further experiments.
+
