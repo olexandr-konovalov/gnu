@@ -187,15 +187,16 @@ you to check that you provide the following details:
   that if the output contained lists of groups, then those groups were 
   also shown to be pairwise non-isomorphic.
 
-This information will be used to re-run your calculations and add to the
-database after such validation.
+This information will be used to re-run your calculations and add gnu(n)
+to the database after such validation.
 
-Orders that are currently not included in the database can be determined 
-using `NextUnknownGnu`, `GnuWishlist` and their RPC counterparts 
-`NextUnknownGnuFromServer` and `GnuWishlistFromServer` as shown above.
+Group orders that are currently not included in the database can be 
+determined using `NextUnknownGnu`, `GnuWishlist` and their remote procedure
+call counterparts `NextUnknownGnuFromServer` and `GnuWishlistFromServer` 
+as shown above.
 
-For the partial results, please create new issues in this repository
-and tell what have you tried and at which step the calculation stopped.
+To submit partial results, please create new issues in this repository
+and tell what you have tried and at which step the calculation stopped.
 It will be useful to know, for example, about time-consuming cases that
 did not finish after substantial amount of time, or run out of memory,
 or where only the first step of the calculation had been completed, but
@@ -206,8 +207,8 @@ ones, and with improving mathematical functionality of the package or
 its infrastructural part.
 
 You may generate parts of the submission automatically using the `grpconst.sh` 
-script: <https://github.com/alex-konovalov/gnu/blob/master/grpconst.sh> (you 
-will need to edit it to adjust GAP path). For example:
+script: <https://github.com/alex-konovalov/gnu/blob/master/grpconst.sh> after 
+editing it to adjust the path to GAP. For example:
 
 ```
 $ ./grpconst.sh 50531
@@ -228,11 +229,11 @@ Isomorphic groups eliminated!
 Gnu( 50531 ) = 5
 ```
 
-In this case, you can copy and paste the last block of lines into your 
-submission, and will only need to add the description of the computer 
-used for the computation. However, in case when the isomorphic groups 
-can not be eliminated, further check will be needed. See an example in
-<https://github.com/alex-konovalov/gnu/issues/18>.
+In this case, instead of filling in the template you can copy and paste
+the last block of lines into your submission, and will only need to add 
+the description of the computer used for the computation. However, in 
+case when the isomorphic groups can not be eliminated, further check will 
+be needed (see e.g. <https://github.com/alex-konovalov/gnu/issues/18>).
 
-Further guidelines could be found in the CONTRIBUTING.md file here:
+Further details could be found in the CONTRIBUTING.md file here:
 <https://github.com/alex-konovalov/gnu/blob/master/CONTRIBUTING.md>
