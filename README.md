@@ -128,7 +128,8 @@ gap>
 
 It is also possible to access the data without local installation by 
 accessing the dedicated GAP SCSCP server running in the Microsoft Azure 
-cloud. To do this from GAP, first you need to load the SCSCP package:
+cloud, which is periodically restarted to pick up database updates.
+To access this server from GAP, first you need to load the SCSCP package:
 
 ```
 gap> LoadPackage("scscp");
