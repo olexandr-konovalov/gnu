@@ -189,7 +189,7 @@ you to check that you provide the following details:
   also shown to be pairwise non-isomorphic.
 
 This information will be used to re-run your calculations and add gnu(n)
-to the database after such validation.
+to the database only after such validation.
 
 Group orders that are currently not included in the database can be 
 determined using `NextUnknownGnu`, `GnuWishlist` and their remote procedure
