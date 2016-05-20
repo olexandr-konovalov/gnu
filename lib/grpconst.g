@@ -8,15 +8,18 @@ LoadPackage("sglppow");
 LoadPackage("cubefree");
 
 GnuByConstructAllGroups:=function(n)
-local r, t1, t2, t, tsplit, sublists, gnu, splits;
+local r, t1, t2, t, tsplit, sublists, gnu, splits, res;
 Print("****************************************\n");
 Print("Constructing all groups of order ", n, "\n");
 Print("****************************************\n");
+res:=rec();
 SetInfoLevel(InfoGrpCon,5);
 t1:=Runtime();
 r:=ConstructAllGroups(n);
 t2:=Runtime();
 t := t2-t1;
+res.result := r;
+res.runtime := t;
 Print("****************************************\n");
 sublists:=Filtered( r, g -> not IsGroup(g) );
 if Length(sublists) = 0 then
@@ -38,6 +41,7 @@ else
     splits := List( sublists, x -> IsomorphismGroups(x[1],x[2]) );
     t2:=Runtime();
     tsplit := t2-t1;
+    res.splittime:=tsplit;
     if ForAll( splits, x -> x = fail ) then
       Print("Success! All pairs contain non-isomorphic groups\n\n");
       gnu := Length(r) + Length( sublists );    
@@ -59,5 +63,5 @@ else
     Print("Long sublists - returning all constructed groups for further checks\n");
   fi;
 fi;
-return rec( runtime := t, splittime := tsplit, result := r );
+return res;
 end;
