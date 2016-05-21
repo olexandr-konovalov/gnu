@@ -238,3 +238,8 @@ be needed (see e.g. <https://github.com/alex-konovalov/gnu/issues/18>).
 
 Further details could be found in the CONTRIBUTING.md file here:
 <https://github.com/alex-konovalov/gnu/blob/master/CONTRIBUTING.md>
+
+### Acknowledgements
+
+We acknowledge financial support from the OpenDreamKit Horizon 2020 
+European Research Infrastructures project (#676541).
