@@ -262,4 +262,6 @@ Further details could be found in the CONTRIBUTING.md file here:
 ### Acknowledgements
 
 We acknowledge financial support from the OpenDreamKit Horizon 2020 
-European Research Infrastructures project (#676541).
+European Research Infrastructures project (#676541). We also acknowledge
+computational resources that were made available via the Microsoft Azure 
+for Research award.
