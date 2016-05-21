@@ -41,7 +41,7 @@ und Diskrete Mathematik (TU Braunschweig) provides the table containing gnu(n) f
 many n < 50000: <http://www.icm.tu-bs.de/ag_algebra/software/small/number.html>.
 These numbers were taken from the Small Groups Library or calculated with the 
 GrpConst package. There is no information in the table for 1082 orders for which
-the computation apparently was unfeasible at the time of publishing the table.
+the computation have not yet been completed.
 
 ### Goals of this package
 
