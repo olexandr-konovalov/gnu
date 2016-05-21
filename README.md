@@ -210,27 +210,44 @@ You can also help with validating new submissions or rechecking existing
 ones, and with improving mathematical functionality of the package or
 its infrastructural part.
 
-You may generate parts of the submission automatically using the `grpconst.sh` 
-script: <https://github.com/alex-konovalov/gnu/blob/master/grpconst.sh> after 
-editing it to adjust the path to GAP. For example:
+You may automatically generate almost all the text to submit using the 
+function`GnuByConstructAllGroups` from the `grpconst.g` script located at <https://raw.githubusercontent.com/alex-konovalov/gnu/master/lib/grpconst.g>,
+and also included in the `lib` directory of the package. For example,
 
 ```
-$ ./grpconst.sh 50531
+gap> GnuByConstructAllGroups(50024);;
 ****************************************
-Constructing all groups of order 50531
+Constructing all groups of order 50024
 ****************************************
-#I  compute extensions of 5 groups of order 2197
-#I  start extending group 1
+#I  computing groups of order [ 2, 2, 2, 13, 13, 37 ]: 
+
+#I  compute Frattini factors: 
+#I    compute ff groups with socle 2 and size 2
+#I    compute ff groups with socle 4 and size 8
+#I    compute ff groups with socle 8 and size 8
+#I    compute ff groups with socle 13 and size 52
+#I    compute ff groups with socle 26 and size 104
 ...
 ...
+...
+#I   extend candidate number 121 of 123 with size 50024
+#I   extend candidate number 122 of 123 with size 50024
+#I   extend candidate number 123 of 123 with size 50024
+#I  found 187 extensions 
+
 ****************************************
+gnu(50024)=197
+
 GAP      4.8.3
-CubeFree 1.15
 GrpConst 2.5
-SglPPow  1.1
-Runtime: 411 ms
-Isomorphic groups eliminated!
-Gnu( 50531 ) = 5
+Runtime: 26335 ms
+Isomorphic groups eliminated
+
+In case this value is new, add the next line to data/gnudata.g
+GNU_SAVE( 50024, 197, WITH_GC );
+
+****************************************
+gap> 
 ```
 
 In this case, instead of filling in the template you can copy and paste
