@@ -18,7 +18,7 @@ some properties of gnu(n) and related functions.
 
 For n > 2048, the calculation of gnu(n) is highly irregular. Some orders are covered
 by the GAP Small Groups Library (<http://www.gap-system.org/Packages/sgl.html>) so
-the gnu(n) is returned by `NrSmallGroups(n)`. The recenlty submitted GAP package 
+the gnu(n) is returned by `NrSmallGroups(n)`. The recently submitted GAP package 
 SglPPow (<http://www.gap-system.org/Packages/sglppow.html>) by Michael Vaughan-Lee 
 and Bettina Eick adds access to groups of order p^7 for p > 11 and to groups of order 
 3^8 (it should be loaded with `LoadPackage("sglppow")`. For groups of cube-free order,
@@ -71,7 +71,7 @@ The Gnu package addresses these problems by:
 ### Local installation
 
 To use the package locally, first you have to install the GAP system using the
-source distrubution from http://www.gap-system.org/Releases/. Please ensure
+source distribution from http://www.gap-system.org/Releases/. Please ensure
 that you build packages as described there as well. After that, the Gnu package 
 could be installed in the same way like other GAP packages that do not require
 compilation. It is suggested to install it as a custom package in the `.gap/pkg` 
@@ -89,7 +89,7 @@ git pull
 ```
 Alternatively, if you do not use git, you may download a zip-archive from 
 <https://github.com/alex-konovalov/gnu/archive/master.zip> and later update 
-it manually by dowloading new zip-archive and unpacking it to replace the 
+it manually by downloading new zip-archive and unpacking it to replace the 
 previous installation of the Gnu package.
 
 After loading the package with `LoadPackage("gnu");` you should be able to
@@ -273,7 +273,7 @@ will also contain report about further isomorphism checks. The function
 `ConstructAllGroups` and timings in case it may require further analysis.
 
 Finally, if you are submitting new values of gnu(n) as GitHub issues,
-please submit strictly one issue per group order. If you are submissing 
+please submit strictly one issue per group order. If you are submitting 
 new values of gnu(n) in a pull request, you may submit one value (in 
 which case the simplest way to submit a pull request is to edit the
 file <https://github.com/alex-konovalov/gnu/blob/master/data/gnudata.g>
