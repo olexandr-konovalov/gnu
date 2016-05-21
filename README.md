@@ -121,7 +121,6 @@ gap> List([105,128,2004,10000,2304,3^8,7^2*5^2*11*19,50000],GnuExplained);
   [ 1396077, "using NrSmallGroups from SglPPow 1.1" ],
   [ 8, "using NumberCFGroups from CubeFree 1.15" ],
   [ false, "not stored in gnu50000 and no library of groups of size 50000" ] ]
-gap> 
 ```
 
 ### Remote connection
@@ -224,11 +223,12 @@ ones, and with improving mathematical functionality of the package or
 its infrastructural part.
 
 You may automatically generate almost all the text to submit using the 
-function`GnuByConstructAllGroups` from the `grpconst.g` script located at <https://raw.githubusercontent.com/alex-konovalov/gnu/master/lib/grpconst.g>,
-and also included in the `lib` directory of the package. For example,
+function `GnuByConstructAllGroups` from the `grpconst.g` script located at <https://raw.githubusercontent.com/alex-konovalov/gnu/master/lib/grpconst.g>,
+and also included in the `lib` directory of the package. For example (note
+the double semicolon usage to suppress the output of the returned list):
 
 ```
-gap> GnuByConstructAllGroups(50024);;
+gap> r:=GnuByConstructAllGroups(50024);;
 ****************************************
 Constructing all groups of order 50024
 ****************************************
@@ -264,12 +264,26 @@ gap>
 ```
 
 In this case, instead of filling in the template you can copy and paste
-the last block of lines into your submission, and will only need to add 
-the description of the computer used for the computation. However, in 
-case when the isomorphic groups can not be eliminated, further check will 
-be needed (see e.g. <https://github.com/alex-konovalov/gnu/issues/18>).
+the last block of lines from the output into the description of an issue
+or a pull request with the added call to `GNU_SAVE`, and will only need 
+to add the description of the computer used for the computation. In some
+cases, when `ConstructAllGroups` returns a list with sublists, the message 
+will also contain report about further isomorphism checks. The function 
+`GnuByConstructAllGroups` also returns a record with the output of 
+`ConstructAllGroups` and timings in case it may require further analysis.
 
-Further details could be found in the CONTRIBUTING.md file here:
+Finally, if you are submitting new values of gnu(n) as GitHub issues,
+please submit strictly one issue per group order. If you are submissing 
+new values of gnu(n) in a pull request, you may submit one value (in 
+which case the simplest way to submit a pull request is to edit the
+file <https://github.com/alex-konovalov/gnu/blob/master/data/gnudata.g>
+via the GitHub's web-interface) or multiple values, in which case each
+of them should be in an individual commit with the appropriate commit
+message looking like the summary produced by `GnuByConstructAllGroups`
+(see <https://github.com/alex-konovalov/gnu/pull/58> for an example).
+Note however that it may take longer time to review such pull request.
+
+Further details and formatting rules could be found in CONTRIBUTING.md:
 <https://github.com/alex-konovalov/gnu/blob/master/CONTRIBUTING.md>
 
 Please take a look, and it will be great if you could be involved!
