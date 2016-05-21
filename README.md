@@ -171,6 +171,9 @@ You can help to the development of this database with the following
 contributions:
 - submitting new values of gnu(n)
 - recording information about partial results to be pursued further
+  (for example, when you run `ConstructAllGroups` but were unable to
+  check non-isomorphism, or the computation was not completed after 
+  several days) 
 - verifying existing entries (possibly using other hardware, operating 
   systems, new releases of GAP and related packages)
 - improving the functionality of this package
@@ -189,7 +192,7 @@ you to check that you provide the following details:
   also shown to be pairwise non-isomorphic.
 
 This information will be used to re-run your calculations and add gnu(n)
-to the database only after such validation.
+to the database only after they will be verified.
 
 Group orders that are currently not included in the database can be 
 determined using `NextUnknownGnu`, `GnuWishlist` and their remote procedure
