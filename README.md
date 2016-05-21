@@ -87,10 +87,10 @@ change to that directory and call
 ```
 git pull
 ```
-Alternatively, you may download the repository as a zip-archive from
-<https://github.com/alex-konovalov/gnu/archive/master.zip> and later
-update it manually by dowloading new zip-archive and unpacking it to
-replace the previous installation of the Gnu package.
+Alternatively, if you do not use git, you may download a zip-archive from 
+<https://github.com/alex-konovalov/gnu/archive/master.zip> and later update 
+it manually by dowloading new zip-archive and unpacking it to replace the 
+previous installation of the Gnu package.
 
 After loading the package with `LoadPackage("gnu");` you should be able to
 use it as follows:
@@ -127,9 +127,10 @@ gap>
 ### Remote connection
 
 It is also possible to access the data without local installation by 
-accessing the dedicated GAP SCSCP server running in the Microsoft Azure 
-cloud, which is periodically restarted to pick up database updates.
-To access this server from GAP, first you need to load the SCSCP package:
+accessing the dedicated GAP SCSCP server that runs in a Docker container 
+in the Microsoft Azure cloud. This server is periodically restarted to 
+pick up database updates. To access it from GAP, first you need to load 
+the SCSCP package:
 
 ```
 gap> LoadPackage("scscp");
@@ -179,7 +180,10 @@ contributions:
 - improving the functionality of this package
 
 You can submit new values of gnu(n) as new issues or pull requests 
-to this repository. The template for the new issue/pull request will ask
+to the GitHub repository <https://github.com/alex-konovalov/gnu>
+(you will have to create a GitHub account if you don't have one yet).
+
+The template for the new issue/pull request will ask
 you to check that you provide the following details:
 - Version of GAP and critical packages: GrpConst, Cubefree, etc.
 - Brief description of the computer used for the calculation 
@@ -197,7 +201,16 @@ to the database only after they will be verified.
 Group orders that are currently not included in the database can be 
 determined using `NextUnknownGnu`, `GnuWishlist` and their remote procedure
 call counterparts `NextUnknownGnuFromServer` and `GnuWishlistFromServer` 
-as shown above.
+as shown above. It may be also useful to look at currently open issues 
+and pull requests since they may contain newly reported results awaiting 
+to be added to the database after their validation. Do not worry that 
+you may be duplicating someone's else computation, because in this case
+
+**DUPLICATION IS REPLICATION IS VERIFICATION**
+
+and by checking that you can reproduce the same result with your GAP 
+installation on your computer you will help to improve the quality 
+of the software used in the experiment.
 
 To submit partial results, please create new issues in this repository
 and tell what you have tried and at which step the calculation stopped.
@@ -258,6 +271,14 @@ be needed (see e.g. <https://github.com/alex-konovalov/gnu/issues/18>).
 
 Further details could be found in the CONTRIBUTING.md file here:
 <https://github.com/alex-konovalov/gnu/blob/master/CONTRIBUTING.md>
+
+Please take a look, and it will be great if you could be involved!
+
+*Alexander Konovalov*
+
+*May 2016*
+
+---
 
 ### Acknowledgements
 
