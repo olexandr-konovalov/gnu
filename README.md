@@ -50,13 +50,16 @@ GAP even in the case when it is feasible, since one has to call different functi
 in a different way, dependently on n. Even finding all known gnu(n) for a list 
 of integers with `NrSmallGroups` is not straightforward, since GAP enters a break
 loop when the library of groups of order n is not available. Also, these data are 
-accessible only from within the working GAP installation. Furthermore, users who 
+accessible only from within the working GAP installation. Next, users who 
 calculate new values of gnu(n) have no easy way to share their data to make them 
-accessible to others. Finally, there is no provenance of the data, i.e. storing
+accessible to others. Furthermore, there is no provenance of the data, i.e. storing
 who calculated them and when, using which hardware and which versions of GAP and
 relevant packages, and how much memory and runtime were needed. These missing
-details also hinder verification of the results, since one does not know in 
-advance which resources should be dedicated to rerun the experiment. 
+details also hinder verification of the results, since one does not know in advance 
+which resources should be dedicated to rerun the experiment. Also, a researcher who
+wants to calculate all groups of a given order with `ConstructAllGroups` does not
+know how much time this may take and whether someone else had already attempted 
+this calculation.
 
 The Gnu package addresses these problems by:
 - Providing uniform access to the calculation of gnu(n) using a single function.
@@ -65,8 +68,9 @@ The Gnu package addresses these problems by:
 - Providing remote data via SCSCP (Symbolic Computation Software Composablity 
   Protocol) to make them accessible to any SCSCP-compliant software (see the
   list at <http://www.symbolic-computing.org>).
-- Using GitHub-based development model and recording provenance information
-  using revision history.
+- Using GitHub-based development model and storing in the revision history the
+  provenance details such as runtime requirements, details of the software and
+  hardware, etc.
 
 ### Local installation
 
