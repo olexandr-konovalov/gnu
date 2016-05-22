@@ -15,7 +15,12 @@ gnus, moas and other exotica" by John H. Conway, Heiko Dietrich and Eamonn A. Oâ
 some properties of gnu(n) and related functions. Both OEIS and the latter paper
 derive most of the entries of the gnu(n) table from the GAP Small Groups Library 
 (<http://www.gap-system.org/Packages/sgl.html>) by Hans Ulrich Besche, Bettina Eick
-and Eamonn O'Brien.
+and Eamonn O'Brien. The group numbers in the SmallGroups library are to a large extent 
+cross-checked, being computed using different approaches and also compared with 
+theoretical results, where available (see [Hans Ulrich Besche, Bettina Eick
+and Eamonn O'Brien. A MILLENNIUM PROJECT: CONSTRUCTING SMALL GROUPS. Int. J. Algebra 
+Comput. 12, 623 (2002), <http://dx.doi.org/10.1142/S0218196702001115>], in 
+particular 4.1. Reliability of the data).
 
 ### What is known for n > 2048 ?
 
