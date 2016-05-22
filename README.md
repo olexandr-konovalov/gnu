@@ -168,6 +168,36 @@ their documentation for SCSCP client functionality and use the server
 name scscp.gap-system.org and port number 26133 similarly to the calls 
 in <https://github.com/alex-konovalov/gnu/blob/master/lib/gnuclient.g>
 
+### Accessing provenance information
+
+Using git, you can search in the version control history to find the
+details about the computation. For example, you can find the commit 
+which adds gnu(4000) with the following command
+
+```
+git log --grep="gnu(4000)"
+```
+
+which will produce the following output:
+
+```
+commit dd9ae55743fe465389324bc44e54197bea146dc7
+Author: Alexander Konovalov <alexk@mcs.st-andrews.ac.uk>
+Date:   Sat May 21 15:33:01 2016 +0100
+
+    gnu(4000)=6108
+    
+    GAP 4.8.3
+    GrpConst 2.5
+    Runtime: 975884 ms
+    Isomorphic groups eliminated
+    
+    Submitted by @gnufinder. Validated by @alex-konovalov on
+    Ubuntu 16.04 on Azure cloud standard DS3 v2 instance (4 cores, 14 GB RAM)
+    
+    Closes #59.
+```    
+
 
 ### Contributing to the database
 
