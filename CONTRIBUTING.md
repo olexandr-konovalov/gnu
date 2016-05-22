@@ -4,62 +4,61 @@ The file `data/gnudata.g` contains some precomputed values of gnu(n) for
 orders which are not covered by the GAP Small Groups Library, CubeFree
 and SglPPow packages. Contributions providing more values of Gnu(n) 
 are welcomed. They may be submitted as issues or pull requests (see
-an example at <https://github.com/alex-konovalov/gnu/issues/12>).
-When a new issue or pull request will be created, you will see a template
-asking for additional details needed to verify your calculation and
-keep provenance of the data. You may generate parts of the submission 
-automatically using the `grpconst.sh` script:
-<https://github.com/alex-konovalov/gnu/blob/master/grpconst.sh>. For 
-example:
-
-```
-$ ./grpconst.sh 50531
-****************************************
-Constructing all groups of order 50531
-****************************************
-#I  compute extensions of 5 groups of order 2197
-#I  start extending group 1
-...
-...
-****************************************
-GAP      4.8.3
-CubeFree 1.15
-GrpConst 2.5
-SglPPow  1.1
-Runtime: 411 ms
-Isomorphic groups eliminated!
-Gnu( 50531 ) = 5
-```
-
-Then you will only need to add the description of the computer used for the
+examples at <https://github.com/alex-konovalov/gnu/issues> and
+<https://github.com/alex-konovalov/gnu/pulls>). When a new issue or pull 
+request will be created, you will see a template asking for additional 
+details needed to verify your calculation and keep provenance of the 
+data. You may generate most of the text automatically using the function
+`GnuByConstructAllGroups` from the `grpconst.g` script as described in 
+<https://github.com/alex-konovalov/gnu/blob/master/README.md>. Then you 
+will only need to add the description of the computer used for the
 computation.
-
-NOTE: In case when the isomorphic groups can not be eliminated, further check 
-is needed. See, for example, <https://github.com/alex-konovalov/gnu/issues/18>.
-
 
 # Rules of submitting values of gnu(n)
 
 Please follow the following rules to ensure that information is recorded
 in a trackable and searchable way:
-- submit strictly one issue or pull request per group order
-- if gnu(n) is determined, the title of the issue should start with
+- for issues, submit strictly one issue per group order
+- pull requests may cover one or several orders; in the latter 
+  case they should have strictly one commit per order
+- if gnu(n) is determined, the title of the issue/PR should start with
   `gnu(n)=X` where n and X are replaced by corresponding numbers.
 - to report partial results for some n, the title of the issue should
-  start with `gnu(n)` and edited afterwards in case the calculation 
+  start with `gnu(n)`. It will be edited afterwards in case the calculation 
   will be completed.
 - use the style `gnu(n)` instead of `Gnu( n )`: no capital `G` and no
   padding in the parentheses.
-- use one or more appropriate labels: "validation needed" for new 
-  submissions, "non-isomorphism check needed" for results of 
-  `ConstructAllGroups` containing sublists, "challenge" for calculations
-  that are exceptionally runtime or memory-demanding. In doubt, use no 
-  label - it will be assigned later.
 
-Also (for those making commits), commit message must contain all provenance data 
-so that it will be possible to recover them using a clone of the repository (see 
-e.g. <https://github.com/alex-konovalov/gnu/commit/e2968b12568b9d6c387d19d7bc22a3317c767e9c>).
+Commit messages (made by submitters via pull requests or by the maintainers 
+must contain all provenance data so that it will be possible to recover details 
+using a clone of the repository.
 
+The new values of gnu(n) will be added to the database only after passing the
+validation procedure. These checklists will be used by the reviewer and the 
+maintainer of the database (which could be the same or different persons).
+
+Checklist for the reviewer:
+- checked and assigned labels "new (n<50000)" or "recomputation", if needed
+- reproducible value of gnu(n)
+- no essential runtime differences
+- sufficient level of technical details
+- assigned label "validated" after successful review
+
+Checklist for the maintainer:
+- correct arguments of command to store data
+- correct location of new line in the data file
+- mention submitter and reviewer in the commit message
+- close corresponding issue from the commit message 
+
+The labels assigned to gnu(n) submissions have the following meaning:
+- new (n<50000): not known before value of gnu(n) for n<50000
+- recomputation: recording computation details for previously known gnu(n)
+- validation needed: new submissions
+- non-isomorphism check needed: results of `ConstructAllGroups` contain
+  sublists and require further refinement
+- challenge: calculations that are exceptionally runtime or memory-demanding,
+  not currently automated, etc.
+- validated: calculations successfully checked 
 
 # Where is the wishlist for gnu(n)?
 
@@ -73,17 +72,8 @@ information. Missing orders can be determined using `NextUnknownGnu`,
 gap> NextUnknownGnu(10000);
 10080
 gap> GnuWishlist([2000..10000]);
-[ 2048, 2240, 2496, 2560, 2592, 2688, 2880, 2916, 3072, 3136, 3168, 3200, 
-  3264, 3360, 3402, 3456, 3520, 3584, 3648, 3744, 3840, 4000, 4032, 4096, 
-  4160, 4224, 4320, 4374, 4416, 4480, 4536, 4608, 4704, 4752, 4800, 4860, 
-  4896, 4928, 4992, 5000, 5040, 5120, 5184, 5280, 5376, 5440, 5472, 5488, 
-  5568, 5600, 5616, 5632, 5760, 5824, 5832, 5952, 6000, 6048, 6080, 6144, 
-  6240, 6272, 6318, 6336, 6400, 6480, 6528, 6624, 6656, 6720, 6804, 6912, 
-  7040, 7056, 7104, 7128, 7168, 7200, 7290, 7296, 7344, 7360, 7392, 7488, 
-  7500, 7616, 7680, 7744, 7776, 7840, 7872, 7920, 7938, 8000, 8064, 8100, 
-  8160, 8192, 8256, 8320, 8352, 8400, 8424, 8448, 8512, 8640, 8704, 8736, 
-  8748, 8800, 8832, 8928, 8960, 9024, 9072, 9120, 9152, 9216, 9261, 9280, 
-  9360, 9408, 9504, 9600, 9604, 9720, 9728, 9792, 9856, 9920, 9936, 9984 ]
+[ 2048, ............ some more orders ............
+  ................................................ ]
 ```
 
 or the same remotely with
@@ -92,21 +82,12 @@ or the same remotely with
 gap> NextUnknownGnuFromServer(10000);
 10080
 gap> GnuWishlistFromServer([2000..10000]);
-[ 2048, 2240, 2496, 2560, 2592, 2688, 2880, 2916, 3072, 3136, 3168, 3200, 
-  3264, 3360, 3402, 3456, 3520, 3584, 3648, 3744, 3840, 4000, 4032, 4096, 
-  4160, 4224, 4320, 4374, 4416, 4480, 4536, 4608, 4704, 4752, 4800, 4860, 
-  4896, 4928, 4992, 5000, 5040, 5120, 5184, 5280, 5376, 5440, 5472, 5488, 
-  5568, 5600, 5616, 5632, 5760, 5824, 5832, 5952, 6000, 6048, 6080, 6144, 
-  6240, 6272, 6318, 6336, 6400, 6480, 6528, 6624, 6656, 6720, 6804, 6912, 
-  7040, 7056, 7104, 7128, 7168, 7200, 7290, 7296, 7344, 7360, 7392, 7488, 
-  7500, 7616, 7680, 7744, 7776, 7840, 7872, 7920, 7938, 8000, 8064, 8100, 
-  8160, 8192, 8256, 8320, 8352, 8400, 8424, 8448, 8512, 8640, 8704, 8736, 
-  8748, 8800, 8832, 8928, 8960, 9024, 9072, 9120, 9152, 9216, 9261, 9280, 
-  9360, 9408, 9504, 9600, 9604, 9720, 9728, 9792, 9856, 9920, 9936, 9984 ]
+[ 2048, ............ some more orders ............
+  ................................................ ]
 ```
 
-It is also suggested to look on GitHub for open issues labeled "challenge",
+It is also suggested to check on GitHub for open issues labeled "challenge",
 "validation needed", "non-isomorphism check needed". If you have partial
 results (for example, run the construction part but were unable to verify
-non-isomorphism or run calculation for several days to no avail), please 
+non-isomorphism or run calculation for several days but to no avail), please 
 also post them - they will be useful for further experiments.
