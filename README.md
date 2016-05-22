@@ -9,16 +9,22 @@ is denoted by gnu(n), where "gnu" stands for the "Group NUmber". The problem
 of the determination of all groups of a given order up to isomorphism is very
 interesting and challenging. For example, the sequence (<https://oeis.org/A000001>) 
 in OEIS is the number of groups of order n, with the first unknown entry being
-gnu(2048). Known values of gnu(n) for 0 < n < 2048 are given in "Counting groups: 
+gnu(2048). Known values of gnu(n) for 0 < n < 2048 are summarised in "Counting groups: 
 gnus, moas and other exotica" by John H. Conway, Heiko Dietrich and Eamonn A. O’Brien
 (<https://www.math.auckland.ac.nz/~obrien/research/gnu.pdf>) which also discusses
-some properties of gnu(n) and related functions.
+some properties of gnu(n) and related functions. Both OEIS and the latter paper
+derive most of the entries of the gnu(n) table from the GAP Small Groups Library 
+(<http://www.gap-system.org/Packages/sgl.html>) by Hans Ulrich Besche, Bettina Eick
+and Eamonn O'Brien.
 
 ### What is known for n > 2048 ?
 
-For n > 2048, the calculation of gnu(n) is highly irregular. Some orders are covered
-by the GAP Small Groups Library (<http://www.gap-system.org/Packages/sgl.html>) so
-the gnu(n) is returned by `NrSmallGroups(n)`. The recently submitted GAP package 
+For n > 2048, the calculation of gnu(n) is highly irregular. Certain orders, including
+some infinite series (groups of order p^n for n<=6; groups of order q^n*p where q 
+divides 2^8, 3^6, 5^5 or 7^4 and p is a an arbitrary prime not equal to q; groups of 
+squarefree order; groups or order which is a product of at most three primes) are 
+covered by the GAP Small Groups Library (<http://www.gap-system.org/Packages/sgl.html>) 
+so the gnu(n) is returned by `NrSmallGroups(n)`. The recently submitted GAP package 
 SglPPow (<http://www.gap-system.org/Packages/sglppow.html>) by Michael Vaughan-Lee 
 and Bettina Eick adds access to groups of order p^7 for p > 11 and to groups of order 
 3^8 (it should be loaded with `LoadPackage("sglppow")`. For groups of cube-free order,
