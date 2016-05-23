@@ -62,15 +62,17 @@ in a different way, dependently on n. Even finding all known gnu(n) for a list
 of integers with `NrSmallGroups` is not straightforward, since GAP enters a break
 loop when the library of groups of order n is not available. Also, these data are 
 accessible only from within the working GAP installation. Next, users who 
-calculate new values of gnu(n) have no easy way to share their data to make them 
-accessible to others. Furthermore, there is no provenance of the data, i.e. storing
-who calculated them and when, using which hardware and which versions of GAP and
-relevant packages, and how much memory and runtime were needed. These missing
-details also hinder verification of the results, since one does not know in advance 
-which resources should be dedicated to rerun the experiment. Also, a researcher who
-wants to calculate all groups of a given order with `ConstructAllGroups` does not
-know how much time this may take and whether someone else had already attempted 
-this calculation.
+calculate new values of gnu(n) have no easy ways to share their data with others 
+and record provenance details, i.e. who calculated them and when, using which 
+hardware and which versions of GAP and relevant packages, and how much memory and 
+runtime were needed. These missing details hinder verification of the results,
+while it will be useful to have them easily available to cross-check calculations
+using different approaches, to check the correctness and performance of new 
+implementations that may emerge in the future, and to check that future versions
+of GAP do not break these calculations. Also, they may be useful for researchers
+who wants to calculate all groups of a given order with `ConstructAllGroups` and
+are interested to know in advance how much time it may take and whether someone 
+else had already attempted this calculation.
 
 The Gnu package addresses these problems by:
 - Providing uniform access to the calculation of gnu(n) using a single function.
@@ -82,6 +84,7 @@ The Gnu package addresses these problems by:
 - Using GitHub-based development model and storing in the revision history the
   provenance details such as runtime requirements, details of the software and
   hardware, etc.
+
 
 ### Local installation
 
