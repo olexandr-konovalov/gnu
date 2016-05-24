@@ -250,14 +250,11 @@ determined using `NextUnknownGnu`, `GnuWishlist` and their remote procedure
 call counterparts `NextUnknownGnuFromServer` and `GnuWishlistFromServer` 
 as shown above. It may be also useful to look at currently open issues 
 and pull requests since they may contain newly reported results awaiting 
-to be added to the database after their validation. Do not worry that 
-you may be duplicating someone's else computation, because in this case
-
-**DUPLICATION IS REPLICATION IS VERIFICATION**
-
-and by checking that you can reproduce the same result with your GAP 
-installation on your computer you will help to improve the quality 
-of the software used in the experiment.
+to be added to the database after their validation. Yo do not need to worry 
+that you may be duplicating someone's else computation, because in this
+case **DUPLICATION IS REPLICATION** and by checking that you can reproduce 
+the same result with your GAP installation on your computer you will help 
+to improve the quality of the software used in the experiment.
 
 To submit partial results, please create new issues in this repository
 and tell what you have tried and at which step the calculation stopped.
