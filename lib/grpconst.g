@@ -52,7 +52,7 @@ if Length(sublists) = 0 then
   Print("GrpConst ", GAPInfo.PackagesInfo.grpconst[1].Version, "\n");
   Print("Runtime: ", t, "\n");
   Print("Isomorphic groups eliminated\n\n");
-  Print("In case this value is new, add the next line to data/gnudata.g\n");
+  Print("To maintainers: for new results, add to data/gnudata.g this line:\n");
   Print("GNU_SAVE( ", n, ", ", gnu, ", WITH_GC );\n\n" );
   Print("****************************************\n");
 else
