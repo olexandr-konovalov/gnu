@@ -59,7 +59,9 @@ else
   Print("Constructed a list of length ", Length(r), "\n");
   Print("It contains ", Length(r)-Length(sublists), " groups and ", Length(sublists), " sublists\n");
   Print("Length of sublists are ", List( sublists, Length ), "\n");
+  Print("Runtime of this construction: ", t, "\n");
   if ForAll( sublists, x -> Length(x) = 2 ) then
+    Print("Now checking non-isomorphism of groups in sublists ...\n");
     t1:=IO_gettimeofday();
     splits := List( sublists, x -> IsomorphismGroups(x[1],x[2]) );
     t2:=IO_gettimeofday();
@@ -83,7 +85,8 @@ else
       Print("Can not split all pairs - returning all constructed groups for further checks\n");
     fi;
   else
-    Print("Long sublists - returning all constructed groups for further checks\n");
+    Print("Checking of sublists with more than two groups is not yet supported\n");
+    Print("Returning all constructed groups for further manual checks\n");
   fi;
 fi;
 return res;
