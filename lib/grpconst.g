@@ -76,7 +76,7 @@ else
              Length(r)-Length(sublists), " groups and ", Length(sublists), " sublists\n");
       Print("Length of sublists : ", List( sublists, Length ), "\n");     
       Print("Runtime to check non-isomorphism of groups in pairs: ", tsplit, "\n\n");
-      Print("In case this value is new, add the next line to data/gnudata.g\n");
+      Print("To maintainers: for new results, add to data/gnudata.g this line:\n");
       Print("GNU_SAVE( ", n, ", ", gnu, ", WITH_GC );\n\n" );
       Print("****************************************\n");
     else
