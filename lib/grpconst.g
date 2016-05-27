@@ -58,7 +58,8 @@ if Length(sublists) = 0 then
 else
   Print("Constructed a list of length ", Length(r), "\n");
   Print("It contains ", Length(r)-Length(sublists), " groups and ", Length(sublists), " sublists\n");
-  Print("Length of sublists are ", List( sublists, Length ), "\n");
+  Print("Length of sublists are ", List( sublists, Length ), "\n\n");
+  Print(Length(r), "<=gnu(" , n , ")<=", Length(r) - Length(sublists) + Sum( List( sublists, Length ) ), "\n\n");
   Print("Runtime of this construction: ", t, "\n");
   if ForAll( sublists, x -> Length(x) = 2 ) then
     Print("Now checking non-isomorphism of groups in sublists ...\n");
