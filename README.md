@@ -177,6 +177,22 @@ gap> GnuWishlistFromServer([50000..50100]);
 If you have locally installed package, then the functions mentioned in this
 section will become available after its loading.
 
+Note that the server is restarted periodically and may not contain the 
+latest additions to the database. You may check when the server had been
+started and which version of the package it uses using the `GetServiceDescription`
+function from the SCSCP package:
+
+```
+gap> GetServiceDescription("scscp.gap-system.org",26133);
+rec( 
+  description := "GAP SCSCP server for numbers of isomorphism types of finite \
+groups. Gnu package version given by commit https://github.com/alex-konovalov/\
+gnu/commit/6630e86ec7b1633b0afaeb7e35e8045561bb8e60. Server started on Sat Jun\
+  4 20:46:10 UTC 2016", service_name := "gnu(n) SCSCP service", 
+  version := "GAP 4.8.3; CubeFree 1.15; Gnu 6630e86ec7b1633b0afaeb7e35e8045561\
+bb8e60; GrpConst 2.5; SCSCP 2.1.4; SglPPow 1.1" )
+```
+
 To access the GAP SCSCP server from other SCSCP-compliant systems, follow
 their documentation for SCSCP client functionality and use the server
 name scscp.gap-system.org and port number 26133 similarly to the calls 
