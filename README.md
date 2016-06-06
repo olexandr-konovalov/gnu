@@ -78,7 +78,7 @@ The Gnu package addresses these problems by:
 - Providing uniform access to the calculation of gnu(n) using a single function.
 - Offering both the ability to install package locally and to access it remotely
   without its local installation.
-- Providing remote data via SCSCP (Symbolic Computation Software Composablity 
+- Providing remote data via SCSCP (Symbolic Computation Software Composability 
   Protocol) to make them accessible to any SCSCP-compliant software (see the
   list at <http://www.symbolic-computing.org>).
 - Using GitHub-based development model and storing in the revision history the
