@@ -5,8 +5,8 @@
 SetPackageInfo( rec(
 PackageName := "Gnu",
 Subtitle := "A database of numbers of isomorphism types of finite groups of given order",
-Version := "0.1",
-Date := "13/05/2016",
+Version := "0.11",
+Date := "04/06/2016",
 
 Persons := [
   rec( 
