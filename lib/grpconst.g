@@ -52,14 +52,17 @@ if Length(sublists) = 0 then
   Print("GrpConst ", GAPInfo.PackagesInfo.grpconst[1].Version, "\n");
   Print("Runtime: ", t, "\n");
   Print("Isomorphic groups eliminated\n\n");
-  Print("In case this value is new, add the next line to data/gnudata.g\n");
+  Print("To maintainers: for new results, add to data/gnudata.g this line:\n");
   Print("GNU_SAVE( ", n, ", ", gnu, ", WITH_GC );\n\n" );
   Print("****************************************\n");
 else
   Print("Constructed a list of length ", Length(r), "\n");
   Print("It contains ", Length(r)-Length(sublists), " groups and ", Length(sublists), " sublists\n");
-  Print("Length of sublists are ", List( sublists, Length ), "\n");
+  Print("Length of sublists are ", List( sublists, Length ), "\n\n");
+  Print(Length(r), "<=gnu(" , n , ")<=", Length(r) - Length(sublists) + Sum( List( sublists, Length ) ), "\n\n");
+  Print("Runtime of this construction: ", t, "\n");
   if ForAll( sublists, x -> Length(x) = 2 ) then
+    Print("Now checking non-isomorphism of groups in sublists ...\n");
     t1:=IO_gettimeofday();
     splits := List( sublists, x -> IsomorphismGroups(x[1],x[2]) );
     t2:=IO_gettimeofday();
@@ -76,14 +79,15 @@ else
              Length(r)-Length(sublists), " groups and ", Length(sublists), " sublists\n");
       Print("Length of sublists : ", List( sublists, Length ), "\n");     
       Print("Runtime to check non-isomorphism of groups in pairs: ", tsplit, "\n\n");
-      Print("In case this value is new, add the next line to data/gnudata.g\n");
+      Print("To maintainers: for new results, add to data/gnudata.g this line:\n");
       Print("GNU_SAVE( ", n, ", ", gnu, ", WITH_GC );\n\n" );
       Print("****************************************\n");
     else
       Print("Can not split all pairs - returning all constructed groups for further checks\n");
     fi;
   else
-    Print("Long sublists - returning all constructed groups for further checks\n");
+    Print("Checking of sublists with more than two groups is not yet supported\n");
+    Print("Returning all constructed groups for further manual checks\n");
   fi;
 fi;
 return res;
