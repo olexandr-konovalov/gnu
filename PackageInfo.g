@@ -1,21 +1,21 @@
 #############################################################################
 ##  
-##  PackageInfo.g              Gnu package                Alexander Konovalov
+##  PackageInfo.g              Gnu package                Olexandr Konovalov
 ##
 SetPackageInfo( rec(
 PackageName := "Gnu",
 Subtitle := "A database of numbers of isomorphism types of finite groups of given order",
-Version := "0.11",
-Date := "04/06/2016",
+Version := "0.12",
+Date := "22/02/2024",
 
 Persons := [
   rec( 
     LastName      := "Konovalov",
-    FirstNames    := "Alexander",
+    FirstNames    := "Olexandr",
     IsAuthor      := true,
     IsMaintainer  := true,
-    Email         := "alexk@mcs.st-andrews.ac.uk",
-    WWWHome       := "http://blogs.cs.st-andrews.ac.uk/alexk/",
+    Email         := "obk1@st-andrews.ac.uk",
+    WWWHome       := "https://olexandr-konovalov.github.io",
     PostalAddress := Concatenation( [
                      "School of Computer Science\n",
                      "University of St Andrews\n",
@@ -29,9 +29,9 @@ Persons := [
 Status := "dev",
 
 SourceRepository :=
-  rec( Type := "git", URL := "https://github.com/alex-konovalov/gnu"),
-IssueTrackerURL := "https://github.com/alex-konovalov/gnu/issues",
-SupportEmail := "alexk@mcs.st-andrews.ac.uk",
+  rec( Type := "git", URL := "https://github.com/olexandr-konovalov/gnu"),
+IssueTrackerURL := "https://github.com/olexandr-konovalov/gnu/issues",
+SupportEmail := "obk1@st-andrews.ac.uk",
 
 Dependencies := rec(
   GAP := "4.8.3",
