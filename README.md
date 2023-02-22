@@ -98,7 +98,7 @@ directory of your GAP installation. Since the package is regularly updated with
 new data, you may use git to clone it and subsequently pull changes from the 
 main repository. To do this, change to the `.gap/pkg` directory and call
 ```
-git clone https://github.com/alex-konovalov/gnu.git
+git clone https://github.com/olexandr-konovalov/gnu.git
 ```
 This will create the directory `gnu`. Later when you will need to pull changes,
 change to that directory and call
@@ -106,7 +106,7 @@ change to that directory and call
 git pull
 ```
 Alternatively, if you do not use git, you may download a zip-archive from 
-<https://github.com/alex-konovalov/gnu/archive/master.zip> and later update 
+<https://github.com/olexandr-konovalov/gnu/archive/master.zip> and later update 
 it manually by downloading new zip-archive and unpacking it to replace the 
 previous installation of the Gnu package.
 
@@ -158,7 +158,7 @@ compilation on UNIX systems (for Windows, the GAP distributions comes with
 compiled binaries for the IO package).
 
 After that, download and read (or copy and paste) the following file into GAP:
-https://raw.githubusercontent.com/alex-konovalov/gnu/master/lib/gnuclient.g
+https://raw.githubusercontent.com/olexandr-konovalov/gnu/master/lib/gnuclient.g
 
 Now you are able to use remote counterparts of the commands shown in the
 previous section:
@@ -186,7 +186,7 @@ function from the SCSCP package:
 gap> GetServiceDescription("scscp.gap-system.org",26133);
 rec( 
   description := "GAP SCSCP server for numbers of isomorphism types of finite \
-groups. Gnu package version given by commit https://github.com/alex-konovalov/\
+groups. Gnu package version given by commit https://github.com/olexandr-konovalov/\
 gnu/commit/6630e86ec7b1633b0afaeb7e35e8045561bb8e60. Server started on Sat Jun\
   4 20:46:10 UTC 2016", service_name := "gnu(n) SCSCP service", 
   version := "GAP 4.8.3; CubeFree 1.15; Gnu 6630e86ec7b1633b0afaeb7e35e8045561\
@@ -196,7 +196,7 @@ bb8e60; GrpConst 2.5; SCSCP 2.1.4; SglPPow 1.1" )
 To access the GAP SCSCP server from other SCSCP-compliant systems, follow
 their documentation for SCSCP client functionality and use the server
 name scscp.gap-system.org and port number 26133 similarly to the calls 
-in <https://github.com/alex-konovalov/gnu/blob/master/lib/gnuclient.g>
+in <https://github.com/olexandr-konovalov/gnu/blob/master/lib/gnuclient.g>
 
 ### Accessing provenance information
 
@@ -208,11 +208,11 @@ which adds gnu(4000) with the following command
 git log --grep="gnu(4000)"
 ```
 
-which will produce the following output:
+may will produce an output of the following format:
 
 ```
 commit dd9ae55743fe465389324bc44e54197bea146dc7
-Author: Alexander Konovalov <alexk@mcs.st-andrews.ac.uk>
+Author: Name <email>
 Date:   Sat May 21 15:33:01 2016 +0100
 
     gnu(4000)=6108
@@ -222,7 +222,7 @@ Date:   Sat May 21 15:33:01 2016 +0100
     Runtime: 975884 ms
     Isomorphic groups eliminated
     
-    Submitted by @gnufinder. Validated by @alex-konovalov on
+    Submitted by @username1. Validated by @username2 on
     Ubuntu 16.04 on Azure cloud standard DS3 v2 instance (4 cores, 14 GB RAM)
     
     Closes #59.
@@ -243,7 +243,7 @@ contributions:
 - improving the functionality of this package
 
 You can submit new values of gnu(n) as new issues or pull requests 
-to the GitHub repository <https://github.com/alex-konovalov/gnu>
+to the GitHub repository <https://github.com/olexandr-konovalov/gnu>
 (you will have to create a GitHub account if you don't have one yet).
 
 The template for the new issue/pull request will ask
@@ -284,7 +284,7 @@ ones, and with improving mathematical functionality of the package or
 its infrastructural part.
 
 You may automatically generate almost all the text to submit using the 
-function `GnuByConstructAllGroups` from the `grpconst.g` script located at <https://raw.githubusercontent.com/alex-konovalov/gnu/master/lib/grpconst.g>,
+function `GnuByConstructAllGroups` from the `grpconst.g` script located at <https://raw.githubusercontent.com/olexandr-konovalov/gnu/master/lib/grpconst.g>,
 and also included in the `lib` directory of the package. For example (note
 the double semicolon usage to suppress the output of the returned list):
 
@@ -337,19 +337,19 @@ Finally, if you are submitting new values of gnu(n) as GitHub issues,
 please submit strictly one issue per group order. If you are submitting 
 new values of gnu(n) in a pull request, you may submit one value (in 
 which case the simplest way to submit a pull request is to edit the
-file <https://github.com/alex-konovalov/gnu/blob/master/data/gnudata.g>
+file <https://github.com/olexandr-konovalov/gnu/blob/master/data/gnudata.g>
 via the GitHub's web-interface) or multiple values, in which case each
 of them should be in an individual commit with the appropriate commit
 message looking like the summary produced by `GnuByConstructAllGroups`
-(see <https://github.com/alex-konovalov/gnu/pull/58> for an example).
+(see <https://github.com/olexandr-konovalov/gnu/pull/58> for an example).
 Note however that it may take longer time to review such pull request.
 
 Further details and formatting rules could be found in CONTRIBUTING.md:
-<https://github.com/alex-konovalov/gnu/blob/master/CONTRIBUTING.md>
+<https://github.com/olexandr-konovalov/gnu/blob/master/CONTRIBUTING.md>
 
 Please take a look, and it will be great if you could be involved!
 
-*Alexander Konovalov*
+*Olexandr Konovalov*
 
 *May 2016*
 
