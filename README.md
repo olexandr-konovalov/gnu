@@ -14,12 +14,12 @@ gnus, moas and other exotica" by John H. Conway, Heiko Dietrich and Eamonn A. Oâ
 (<https://www.math.auckland.ac.nz/~obrien/research/gnu.pdf>) which also discusses
 some properties of gnu(n) and related functions. Both OEIS and the latter paper
 derive most of the entries of the gnu(n) table from the GAP Small Groups Library 
-(<http://www.gap-system.org/Packages/sgl.html>) by Hans Ulrich Besche, Bettina Eick
+(<https://www.gap-system.org/Packages/smallgrp.html>) by Hans Ulrich Besche, Bettina Eick
 and Eamonn O'Brien. The group numbers in the SmallGroups library are to a large extent 
 cross-checked, being computed using different approaches and also compared with 
 theoretical results, where available (see [Hans Ulrich Besche, Bettina Eick
 and Eamonn O'Brien. A MILLENNIUM PROJECT: CONSTRUCTING SMALL GROUPS. Int. J. Algebra 
-Comput. 12, 623 (2002), <http://dx.doi.org/10.1142/S0218196702001115>], in 
+Comput. 12, 623 (2002), <https://doi.org/10.1142/S0218196702001115>], in
 particular 4.1. Reliability of the data).
 
 ### What is known for n > 2048 ?
@@ -28,20 +28,20 @@ For n > 2048, the calculation of gnu(n) is highly irregular. Certain orders, inc
 some infinite series (groups of order p^n for n<=6; groups of order q^n*p where q 
 divides 2^8, 3^6, 5^5 or 7^4 and p is a an arbitrary prime not equal to q; groups of 
 squarefree order; groups or order which is a product of at most three primes) are 
-covered by the GAP Small Groups Library (<http://www.gap-system.org/Packages/sgl.html>) 
+covered by the GAP Small Groups Library (<https://www.gap-system.org/Packages/smallgrp.html>)
 so the gnu(n) is returned by `NrSmallGroups(n)`. The recently submitted GAP package 
-SglPPow (<http://www.gap-system.org/Packages/sglppow.html>) by Michael Vaughan-Lee 
+SglPPow (<https://www.gap-system.org/Packages/sglppow.html>) by Michael Vaughan-Lee
 and Bettina Eick adds access to groups of order p^7 for p > 11 and to groups of order 
 3^8 (it should be loaded with `LoadPackage("sglppow")`. For groups of cube-free order,
-the Cubefee package (<http://www.gap-system.org/Packages/cubefree.html>) by Heiko 
+the Cubefee package (<https://www.gap-system.org/Packages/cubefree.html>) by Heiko
 Dietrich calculates gnu(n) with `NumberCFGroups(n)`.
 
 ### How to calculate gnu(n) for arbitrary n ?
 
 For groups of other orders one could try the GAP package GrpConst by Hans Ulrich 
-Besche and Bettina Eick (<http://www.gap-system.org/Packages/grpconst.html>) to 
+Besche and Bettina Eick (<https://www.gap-system.org/Packages/grpconst.html>) to
 construct all groups of a given order using `ConstructAllGroups(n)`. As documented 
-at <http://www.gap-system.org/Manuals/pkg/grpconst/htm/CHAP003.htm>, this function 
+at <https://docs.gap-system.org/pkg/grpconst/htm/CHAP003.htm>, this function
 usually returns a list of groups, in which case gnu(n) is the length of this list.
 However, sometimes this list contains sublists. In this case, one has to check each
 such sublist contains groups which are pairwise non-isomorphic, or remove duplicates.
@@ -79,8 +79,7 @@ The Gnu package addresses these problems by:
 - Offering both the ability to install package locally and to access it remotely
   without its local installation.
 - Providing remote data via SCSCP (Symbolic Computation Software Composability 
-  Protocol) to make them accessible to any SCSCP-compliant software (see the
-  list at <http://www.symbolic-computing.org>).
+  Protocol) to make them accessible to any SCSCP-compliant software.
 - Using GitHub-based development model and storing in the revision history the
   provenance details such as runtime requirements, details of the software and
   hardware, etc.
@@ -89,7 +88,7 @@ The Gnu package addresses these problems by:
 ### Local installation
 
 To use the package locally, first you have to install the GAP system using the
-source distribution from http://www.gap-system.org/Releases/. Please ensure
+source distribution from <https://www.gap-system.org/Releases/>. Please ensure
 that you build packages as described there as well. After that, the Gnu package 
 could be installed in the same way like other GAP packages that do not require
 compilation. It is suggested to install it as a custom package in the `.gap/pkg` 
@@ -135,7 +134,7 @@ gap> List([105,128,2004,10000,2304,3^8,7^2*5^2*11*19,50000],GnuExplained);
   [ 2328, "using NrSmallGroups and the GAP Small Groups Library" ],
   [ 10, "using NrSmallGroups and the GAP Small Groups Library" ],
   [ 4728, "precomputed using GrpConst package" ],
-  [ 15756130, "http://dx.doi.org/10.1016/j.jalgebra.2013.09.028" ],
+  [ 15756130, "https://doi.org/10.1016/j.jalgebra.2013.09.028" ],
   [ 1396077, "using NrSmallGroups from SglPPow 1.1" ],
   [ 8, "using NumberCFGroups from CubeFree 1.15" ],
   [ false, "not stored in gnu50000 and no library of groups of size 50000" ] ]
